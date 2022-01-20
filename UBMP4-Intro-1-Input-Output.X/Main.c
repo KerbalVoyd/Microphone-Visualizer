@@ -34,6 +34,7 @@ void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, u
 unsigned char leds;
 unsigned char red, green, blue;
 unsigned char redArray[pixelLength+1], greenArray[pixelLength+1], blueArray[pixelLength+1];
+float sound;
 
 
 int main(void)
@@ -41,60 +42,70 @@ int main(void)
     // Configure oscillator and I/O ports. These functions run once at start-up.
     OSC_config();               // Configure internal oscillator for 48 MHz
     UBMP4_config();             // Configure on-board UBMP4 I/O devices
-    
-    
+    ADC_config();
+    ADC_select_channel(ANH1);
+    __delay_ms(100);
     // Code in this while loop runs repeatedly.
     while(1)
 	{
+        sound = ADC_read();
+        if (sound == 10) {
+            
+            LED4 = 1;
+        }
         
-        int prevNum = halfLength;
-        int leftNum = halfLength-1;
-        int prevLeftNum = halfLength;
-        // If SW2 is pressed, make a flashy light pattern
-
-        for (int i = halfLength+1; i <= (pixelLength); i++) {
-            for (int ii = 0; ii < 255-(255%speed); ii++) {
-                
-                redArray[i]+=speed;
-                redArray[leftNum]+=speed;
-                redArray[prevNum]-=speed;
-                
-                if (prevLeftNum != halfLength) { 
-                    redArray[prevLeftNum]-=speed;
-                }
-                neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-                
-                __delay_us(200);
-            }
-            prevLeftNum = leftNum;
-            leftNum--;
-            prevNum = i;
-            
-        }
-        leftNum = 0;
-        prevLeftNum = -1;
-        for (int i3 = pixelLength; i3 >= halfLength+1; i3--) {
-            for (int i4 = 0; i4 < 255-(255%speed); i4++) {
-                
-                redArray[i3]+=speed;
-                //if (leftNum != halfLength) {
-                    redArray[leftNum]+=speed;
-                //}
-                redArray[prevNum]-=speed;
-
-                if (prevLeftNum != halfLength) {
-                    
-                    redArray[prevLeftNum]-=speed;
-                }
-                neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-                
-                __delay_us(200);
-            }
-            prevLeftNum = leftNum;
-            leftNum++;
-            prevNum = i3;
-            
-        }
+        
+        
+        
+        
+//        int prevNum = halfLength;
+//        int leftNum = halfLength-1;
+//        int prevLeftNum = halfLength;
+//        // If SW2 is pressed, make a flashy light pattern
+//
+//        for (int i = halfLength+1; i <= (pixelLength); i++) {
+//            for (int ii = 0; ii < 255-(255%speed); ii++) {
+//                
+//                redArray[i]+=speed;
+//                redArray[leftNum]+=speed;
+//                redArray[prevNum]-=speed;
+//                
+//                if (prevLeftNum != halfLength) { 
+//                    redArray[prevLeftNum]-=speed;
+//                }
+//                neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+//                
+//                __delay_us(200);
+//            }
+//            prevLeftNum = leftNum;
+//            leftNum--;
+//            prevNum = i;
+//            
+//        }
+//        leftNum = 0;
+//        prevLeftNum = -1;
+//        for (int i3 = pixelLength; i3 >= halfLength+1; i3--) {
+//            for (int i4 = 0; i4 < 255-(255%speed); i4++) {
+//                
+//                redArray[i3]+=speed;
+//                //if (leftNum != halfLength) {
+//                    redArray[leftNum]+=speed;
+//                //}
+//                redArray[prevNum]-=speed;
+//
+//                if (prevLeftNum != halfLength) {
+//                    
+//                    redArray[prevLeftNum]-=speed;
+//                }
+//                neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+//                
+//                __delay_us(200);
+//            }
+//            prevLeftNum = leftNum;
+//            leftNum++;
+//            prevNum = i3;
+//            
+//        }
         
 
         // Add code for your Program Analysis and Programming Activities here:

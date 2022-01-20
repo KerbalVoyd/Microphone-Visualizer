@@ -1,4 +1,4 @@
-# 1 "Intro-1-Input-Ouput.c"
+# 1 "Main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Intro-1-Input-Ouput.c" 2
-# 14 "Intro-1-Input-Ouput.c"
+# 1 "Main.c" 2
+# 14 "Main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3977,8 +3977,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 14 "Intro-1-Input-Ouput.c" 2
-
+# 15 "Main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4064,11 +4063,9 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
-# 15 "Intro-1-Input-Ouput.c" 2
-
+# 16 "Main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 16 "Intro-1-Input-Ouput.c" 2
-
+# 17 "Main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4441,8 +4438,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 17 "Intro-1-Input-Ouput.c" 2
-
+# 18 "Main.c" 2
 # 1 "./UBMP4.h" 1
 # 105 "./UBMP4.h"
 void OSC_config(void);
@@ -4466,8 +4462,7 @@ void ADC_select_channel(unsigned char);
 unsigned char ADC_read(void);
 # 148 "./UBMP4.h"
 unsigned char ADC_read_channel(unsigned char);
-# 18 "Intro-1-Input-Ouput.c" 2
-
+# 19 "Main.c" 2
 
 
 
@@ -4486,6 +4481,7 @@ void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, u
 unsigned char leds;
 unsigned char red, green, blue;
 unsigned char redArray[9 +1], greenArray[9 +1], blueArray[9 +1];
+float sound;
 
 
 int main(void)
@@ -4493,65 +4489,18 @@ int main(void)
 
     OSC_config();
     UBMP4_config();
-
-
+    ADC_config();
+    ADC_select_channel(0b00010000);
+    _delay((unsigned long)((100)*(48000000/4000.0)));
 
     while(1)
  {
+        sound = ADC_read();
+        if (sound == 10) {
 
-        int prevNum = (9/2);
-        int leftNum = (9/2)-1;
-        int prevLeftNum = (9/2);
-
-
-        for (int i = (9/2)+1; i <= (9); i++) {
-            for (int ii = 0; ii < 255-(255%1); ii++) {
-
-                redArray[i]+=1;
-                redArray[leftNum]+=1;
-                redArray[prevNum]-=1;
-
-                if (prevLeftNum != (9/2)) {
-                    redArray[prevLeftNum]-=1;
-                }
-                neopixel_fill_a(9, redArray, greenArray, blueArray);
-
-                _delay((unsigned long)((200)*(48000000/4000000.0)));
-            }
-            prevLeftNum = leftNum;
-            leftNum--;
-            prevNum = i;
-
+            LATCbits.LATC5 = 1;
         }
-        leftNum = 0;
-        prevLeftNum = -1;
-        for (int i3 = 9; i3 >= (9/2)+1; i3--) {
-            for (int i4 = 0; i4 < 255-(255%1); i4++) {
-
-                redArray[i3]+=1;
-
-                    redArray[leftNum]+=1;
-
-                redArray[prevNum]-=1;
-
-                if (prevLeftNum != (9/2)) {
-
-                    redArray[prevLeftNum]-=1;
-                }
-                neopixel_fill_a(9, redArray, greenArray, blueArray);
-
-                _delay((unsigned long)((200)*(48000000/4000000.0)));
-            }
-            prevLeftNum = leftNum;
-            leftNum++;
-            prevNum = i3;
-
-        }
-
-
-
-
-
+# 114 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");

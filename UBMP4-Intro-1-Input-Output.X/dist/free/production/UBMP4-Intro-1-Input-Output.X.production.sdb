@@ -3,21 +3,29 @@
 [d edition pro ]
 [d chip 16F1459 ]
 [d frameptr 6 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"39 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Neo Pixel\UBMP4-Intro-1-Input-Output.X\Intro-1-Input-Ouput.c
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"40 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
 [v _main main `(i  1 e 2 0 ]
-"112
-[v _neopixel_fill_a neopixel_fill_a `(v  1 e 1 0 ]
-"130
+"141
 [v _neopixel_send neopixel_send `(v  1 e 1 0 ]
-"21 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Neo Pixel\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+"21 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
 "29
 [v _UBMP4_config UBMP4_config `(v  1 e 1 0 ]
-[s S98 . 1 `uc 1 RA0 1 0 :1:0 
+"51
+[v _ADC_config ADC_config `(v  1 e 1 0 ]
+"65
+[v _ADC_select_channel ADC_select_channel `(v  1 e 1 0 ]
+"73
+[v _ADC_read ADC_read `(uc  1 e 1 0 ]
+[s S114 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -25,8 +33,8 @@
 `uc 1 RA5 1 0 :1:5 
 ]
 "444 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[u S105 . 1 `S98 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES105  1 e 1 @12 ]
+[u S121 . 1 `S114 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES121  1 e 1 @12 ]
 "1004
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1031
@@ -63,7 +71,7 @@
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "1932
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S120 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S93 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -73,8 +81,8 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1949
-[u S129 . 1 `S120 1 . 1 0 ]
-[v _LATCbits LATCbits `VES129  1 e 1 @270 ]
+[u S102 . 1 `S93 1 . 1 0 ]
+[v _LATCbits LATCbits `VES102  1 e 1 @270 ]
 "2519
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "2548
@@ -93,56 +101,36 @@
 [v _GO GO `VEb  1 e 0 @1257 ]
 "6898
 [v _PLLRDY PLLRDY `VEb  1 e 0 @1238 ]
-"36 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Neo Pixel\UBMP4-Intro-1-Input-Output.X\Intro-1-Input-Ouput.c
-[v _redArray redArray `[10]uc  1 e 10 0 ]
-[v _greenArray greenArray `[10]uc  1 e 10 0 ]
-[v _blueArray blueArray `[10]uc  1 e 10 0 ]
-"39
+"37 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+[v _sound sound `f  1 e 4 0 ]
+"40
 [v _main main `(i  1 e 2 0 ]
 {
-"77
-[v main@i4 i4 `i  1 a 2 2 ]
-"56
-[v main@ii ii `i  1 a 2 0 ]
-"76
-[v main@i3 i3 `i  1 a 2 8 ]
-"55
-[v main@i i `i  1 a 2 6 ]
-"52
-[v main@prevLeftNum prevLeftNum `i  1 a 2 12 ]
-"51
-[v main@leftNum leftNum `i  1 a 2 10 ]
-"50
-[v main@prevNum prevNum `i  1 a 2 4 ]
-"110
+"121
 } 0
-"112
-[v _neopixel_fill_a neopixel_fill_a `(v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
-[v neopixel_fill_a@leds leds `uc  1 a 1 wreg ]
-"113
-[v neopixel_fill_a@ledNum ledNum `i  1 a 2 9 ]
-"112
-[v neopixel_fill_a@leds leds `uc  1 a 1 wreg ]
-[v neopixel_fill_a@red red `*.4uc  1 p 1 3 ]
-[v neopixel_fill_a@green green `*.4uc  1 p 1 4 ]
-[v neopixel_fill_a@blue blue `*.4uc  1 p 1 5 ]
-[v neopixel_fill_a@leds leds `uc  1 a 1 8 ]
-"119
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
 } 0
-"130
-[v _neopixel_send neopixel_send `(v  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
 {
-[v neopixel_send@colour colour `uc  1 a 1 wreg ]
-"132
-[v neopixel_send@bits bits `uc  1 a 1 2 ]
-"130
-[v neopixel_send@colour colour `uc  1 a 1 wreg ]
-"132
-[v neopixel_send@colour colour `uc  1 a 1 1 ]
-"143
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
 } 0
-"29 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Neo Pixel\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+"29 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _UBMP4_config UBMP4_config `(v  1 e 1 0 ]
 {
 "48
@@ -151,4 +139,23 @@
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
 {
 "26
+} 0
+"65
+[v _ADC_select_channel ADC_select_channel `(v  1 e 1 0 ]
+{
+[v ADC_select_channel@channel channel `uc  1 a 1 wreg ]
+[v ADC_select_channel@channel channel `uc  1 a 1 wreg ]
+"67
+[v ADC_select_channel@channel channel `uc  1 a 1 0 ]
+"70
+} 0
+"73
+[v _ADC_read ADC_read `(uc  1 e 1 0 ]
+{
+"79
+} 0
+"51
+[v _ADC_config ADC_config `(v  1 e 1 0 ]
+{
+"61
 } 0
