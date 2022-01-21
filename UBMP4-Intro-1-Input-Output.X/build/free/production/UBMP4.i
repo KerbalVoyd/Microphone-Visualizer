@@ -4119,7 +4119,7 @@ void UBMP4_config(void)
     WPUB = 0b11110000;
 
     LATC = 0b00000000;
-    TRISC = 0b00001110;
+    TRISC = 0b00001100;
     ANSELC = 0b00000000;
 
 

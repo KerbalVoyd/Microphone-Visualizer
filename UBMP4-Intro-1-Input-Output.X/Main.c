@@ -27,7 +27,7 @@ void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, u
 
 
 
-#define pixelLength 9
+#define pixelLength 30
 #define halfLength (pixelLength/2)
 #define speed 1
 
@@ -46,12 +46,31 @@ int main(void)
     ADC_select_channel(ANH1);
     __delay_ms(100);
     // Code in this while loop runs repeatedly.
+    int led = 5;
+    int brightness = 255;
     while(1)
 	{
+        
         sound = ADC_read();
-        if (sound == 10) {
-            
+        if (sound >= 9) {
             LED4 = 1;
+            for (led; led >= 5; led--) {
+                for (int i = 255; i <= 0; i--) {
+                    neopixel_fill_a(led, redArray, greenArray, blueArray);
+                    
+                    redArray[led]--;
+                    greenArray[led]--;
+                    blueArray[led]--;
+                    __delay_ms(5);
+                }
+                __delay_ms(5);
+            }
+        } else { 
+            LED4 = 0;
+            for (led; led <= 30; led++) {
+                neopixel_fill(led, 200, 0, 100);
+                __delay_ms(5);
+            }
         }
         
         
@@ -142,13 +161,13 @@ void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)
     {
-        H1OUT = 1;
+        H2OUT = 1;
         if((colour & 0b10000000) == 0)
         {
-            H1OUT = 0;
+            H2OUT = 0;
         }
         NOP();
-        H1OUT = 0;
+        H2OUT = 0;
         colour = colour << 1;
     }
 }
