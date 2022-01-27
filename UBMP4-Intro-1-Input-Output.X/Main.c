@@ -30,13 +30,128 @@ void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, u
 #define pixelLength 30
 #define halfLength (pixelLength/2)
 #define speed 1
+#define centerPoint 127
+
+#define LEDs 10
+
+unsigned char red[LEDs];
+unsigned char green[LEDs];
+unsigned char blue[LEDs];
+
+unsigned char redS[LEDs];
+unsigned char greenS[LEDs];
+unsigned char blueS[LEDs];
+
+unsigned char sRed = 0;
+unsigned char sGreen = 0;
+unsigned char sBlue = 0;
+
+unsigned char arrayLength = 4;
+unsigned char indexFunction = 0;
+
+int tick = 1;
+int ticks_left = 0;
+bool isPressed = false;
+
+
+void pulsingRGB();
+
+
 
 unsigned char leds;
-unsigned char red, green, blue;
 unsigned char redArray[pixelLength+1], greenArray[pixelLength+1], blueArray[pixelLength+1];
-int sound;
 
 
+void hsvToRGB(unsigned char *r, unsigned char *g, unsigned char *b, unsigned char h1, unsigned char s1, unsigned char v1) {
+    unsigned char region, p, q, t;
+    unsigned int h, s, v, remainder;
+
+    if (s1 == 0)
+    {
+        *r = v1;
+        *g = v1;
+        *b = v1;
+    }
+
+    // converting to 16 bit to prevent overflow
+    h = h1;
+    s = s1;
+    v = v1;
+
+    region = h / 43;
+    remainder = (h - (region * 43)) * 6; 
+
+    p = (v * (255 - s)) >> 8;
+    q = (v * (255 - ((s * remainder) >> 8))) >> 8;
+    t = (v * (255 - ((s * (255 - remainder)) >> 8))) >> 8;
+
+    switch (region)
+    {
+        case 0:
+            *r = v;
+            *g = t;
+            *b = p;
+            break;
+        case 1:
+            *r = q;
+            *g = v;
+            *b = p;
+            break;
+        case 2:
+            *r = p;
+            *g = v;
+            *b = t;
+            break;
+        case 3:
+            *r = p;
+            *g = q;
+            *b = v;
+            break;
+        case 4:
+            *r = t;
+            *g = p;
+            *b = v;
+            break;
+        default:
+            *r = v;
+            *g = p;
+            *b = q;
+            break;
+    }
+}
+
+unsigned char ledNum = LEDs;
+bool rev = false;
+
+void pulsingRGB() {
+    for(unsigned char i = 0; i < LEDs; i++) {
+        hsvToRGB(&redS[i], &greenS[i], &blueS[i], (unsigned char) (tick) + (i * 2), 255, 255);
+        if(i > ledNum) {
+            redS[i] = 0;
+            blueS[i] = 0;
+            greenS[i] = 0;
+        }
+    }
+    if(ticks_left != 0) ticks_left--;
+    tick++;
+    
+    if(rev) {
+        ledNum++;
+        if(ledNum == LEDs) rev = false;
+    } else {
+        ledNum--;
+        if(ledNum == 0) {
+            rev = true;
+        }
+        neopixel_fill_a(LEDs, redS, greenS, blueS);
+    }
+    neopixel_fill_a(LEDs, redS, greenS, blueS);
+    __delay_ms(15);
+}
+
+unsigned int soundV2;
+unsigned int soundMemory;
+unsigned int sound;
 int main(void)
 {
     // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -50,15 +165,27 @@ int main(void)
     int brightness = 255;
     while(1)
 	{
-        
+
         sound = ADC_read();
-        if (sound > 150 || sound < 100) {
+        soundV2 = soundMemory - centerPoint;
+        if (sound > 200 || sound < 200) {
+            
+            soundMemory = sound;
+            
+        }
+        if (soundMemory > 200 || soundMemory < 200) {
             LED4 = 1;
-        } else { 
-            LED4 = 1;
+        } else {
+            LED4 = 0;
         }
         
+        if (sound > -130) {
+            LED3 = 1;
+        } else {
+            LED3 = 0;
+        }
         
+
         
         
         
@@ -133,14 +260,14 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
     }
 }
 
-void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue) {
-    for (; leds != 0; leds--) {
-        neopixel_send(green);
-        neopixel_send(red);
-        neopixel_send(blue);
-    }
-    
-}
+//void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue) {
+//    for (; leds != 0; leds--) {
+//        neopixel_send(green);
+//        neopixel_send(red);
+//        neopixel_send(blue);
+//    }
+//    
+//}
 
 void neopixel_send(unsigned char colour)
 {

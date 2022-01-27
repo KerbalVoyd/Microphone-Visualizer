@@ -3,13 +3,21 @@
 [d edition pro ]
 [d chip 16F1459 ]
 [d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"40 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+"65 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+[v _hsvToRGB hsvToRGB `(v  1 e 1 0 ]
+"155
 [v _main main `(i  1 e 2 0 ]
-"145
+"254
+[v _neopixel_fill_a neopixel_fill_a `(v  1 e 1 0 ]
+"272
 [v _neopixel_send neopixel_send `(v  1 e 1 0 ]
 "21 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
@@ -21,7 +29,7 @@
 [v _ADC_select_channel ADC_select_channel `(v  1 e 1 0 ]
 "73
 [v _ADC_read ADC_read `(uc  1 e 1 0 ]
-[s S114 . 1 `uc 1 RA0 1 0 :1:0 
+[s S122 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -29,8 +37,8 @@
 `uc 1 RA5 1 0 :1:5 
 ]
 "444 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[u S121 . 1 `S114 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES121  1 e 1 @12 ]
+[u S129 . 1 `S122 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES129  1 e 1 @12 ]
 "1004
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1031
@@ -67,7 +75,7 @@
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "1932
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S93 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S101 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -77,8 +85,8 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1949
-[u S102 . 1 `S93 1 . 1 0 ]
-[v _LATCbits LATCbits `VES102  1 e 1 @270 ]
+[u S110 . 1 `S101 1 . 1 0 ]
+[v _LATCbits LATCbits `VES110  1 e 1 @270 ]
 "2519
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "2548
@@ -97,12 +105,30 @@
 [v _GO GO `VEb  1 e 0 @1257 ]
 "6898
 [v _PLLRDY PLLRDY `VEb  1 e 0 @1238 ]
-"37 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-[v _sound sound `i  1 e 2 0 ]
-"40
+"41 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+[v _redS redS `[10]uc  1 e 10 0 ]
+"42
+[v _greenS greenS `[10]uc  1 e 10 0 ]
+"43
+[v _blueS blueS `[10]uc  1 e 10 0 ]
+"52
+[v _tick tick `i  1 e 2 0 ]
+"53
+[v _ticks_left ticks_left `i  1 e 2 0 ]
+"123
+[v _ledNum ledNum `uc  1 e 1 0 ]
+"124
+[v _rev rev `a  1 e 1 0 ]
+"152
+[v _soundV2 soundV2 `ui  1 e 2 0 ]
+"153
+[v _soundMemory soundMemory `ui  1 e 2 0 ]
+"154
+[v _sound sound `ui  1 e 2 0 ]
+"155
 [v _main main `(i  1 e 2 0 ]
 {
-"125
+"252
 } 0
 "29 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _UBMP4_config UBMP4_config `(v  1 e 1 0 ]

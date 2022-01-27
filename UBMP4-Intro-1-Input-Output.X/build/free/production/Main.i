@@ -4471,19 +4471,125 @@ unsigned char ADC_read_channel(unsigned char);
 void neopixel_send(unsigned char colour);
 void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]);
 void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue);
+# 37 "Main.c"
+unsigned char red[10];
+unsigned char green[10];
+unsigned char blue[10];
+
+unsigned char redS[10];
+unsigned char greenS[10];
+unsigned char blueS[10];
+
+unsigned char sRed = 0;
+unsigned char sGreen = 0;
+unsigned char sBlue = 0;
+
+unsigned char arrayLength = 4;
+unsigned char indexFunction = 0;
+
+int tick = 1;
+int ticks_left = 0;
+_Bool isPressed = 0;
 
 
-
-
+void pulsingRGB();
 
 
 
 unsigned char leds;
-unsigned char red, green, blue;
 unsigned char redArray[30 +1], greenArray[30 +1], blueArray[30 +1];
-int sound;
 
 
+void hsvToRGB(unsigned char *r, unsigned char *g, unsigned char *b, unsigned char h1, unsigned char s1, unsigned char v1) {
+    unsigned char region, p, q, t;
+    unsigned int h, s, v, remainder;
+
+    if (s1 == 0)
+    {
+        *r = v1;
+        *g = v1;
+        *b = v1;
+    }
+
+
+    h = h1;
+    s = s1;
+    v = v1;
+
+    region = h / 43;
+    remainder = (h - (region * 43)) * 6;
+
+    p = (v * (255 - s)) >> 8;
+    q = (v * (255 - ((s * remainder) >> 8))) >> 8;
+    t = (v * (255 - ((s * (255 - remainder)) >> 8))) >> 8;
+
+    switch (region)
+    {
+        case 0:
+            *r = v;
+            *g = t;
+            *b = p;
+            break;
+        case 1:
+            *r = q;
+            *g = v;
+            *b = p;
+            break;
+        case 2:
+            *r = p;
+            *g = v;
+            *b = t;
+            break;
+        case 3:
+            *r = p;
+            *g = q;
+            *b = v;
+            break;
+        case 4:
+            *r = t;
+            *g = p;
+            *b = v;
+            break;
+        default:
+            *r = v;
+            *g = p;
+            *b = q;
+            break;
+    }
+}
+
+unsigned char ledNum = 10;
+_Bool rev = 0;
+
+void pulsingRGB() {
+    for(unsigned char i = 0; i < 10; i++) {
+        hsvToRGB(&redS[i], &greenS[i], &blueS[i], (unsigned char) (tick) + (i * 2), 255, 255);
+        if(i > ledNum) {
+            redS[i] = 0;
+            blueS[i] = 0;
+            greenS[i] = 0;
+        }
+    }
+    if(ticks_left != 0) ticks_left--;
+    tick++;
+
+    if(rev) {
+        ledNum++;
+        if(ledNum == 10) rev = 0;
+    } else {
+        ledNum--;
+        if(ledNum == 0) {
+            rev = 1;
+        }
+        neopixel_fill_a(10, redS, greenS, blueS);
+    }
+    neopixel_fill_a(10, redS, greenS, blueS);
+    _delay((unsigned long)((15)*(48000000/4000.0)));
+}
+
+unsigned int soundV2;
+unsigned int soundMemory;
+unsigned int sound;
 int main(void)
 {
 
@@ -4499,12 +4605,24 @@ int main(void)
  {
 
         sound = ADC_read();
-        if (sound > 150 || sound < 100) {
+        soundV2 = soundMemory - 127;
+        if (sound > 200 || sound < 200) {
+
+            soundMemory = sound;
+
+        }
+        if (soundMemory > 200 || soundMemory < 200) {
             LATCbits.LATC5 = 1;
         } else {
-            LATCbits.LATC5 = 1;
+            LATCbits.LATC5 = 0;
         }
-# 118 "Main.c"
+
+        if (sound > -130) {
+            LATCbits.LATC4 = 1;
+        } else {
+            LATCbits.LATC4 = 0;
+        }
+# 245 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");
@@ -4522,16 +4640,7 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
         neopixel_send(blue[ledNum]);
     }
 }
-
-void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue) {
-    for (; leds != 0; leds--) {
-        neopixel_send(green);
-        neopixel_send(red);
-        neopixel_send(blue);
-    }
-
-}
-
+# 272 "Main.c"
 void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)
