@@ -34,7 +34,7 @@ void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, u
 unsigned char leds;
 unsigned char red, green, blue;
 unsigned char redArray[pixelLength+1], greenArray[pixelLength+1], blueArray[pixelLength+1];
-float sound;
+int sound;
 
 
 int main(void)
@@ -52,25 +52,10 @@ int main(void)
 	{
         
         sound = ADC_read();
-        if (sound >= 9) {
+        if (sound > 150 || sound < 100) {
             LED4 = 1;
-            for (led; led >= 5; led--) {
-                for (int i = 255; i <= 0; i--) {
-                    neopixel_fill_a(led, redArray, greenArray, blueArray);
-                    
-                    redArray[led]--;
-                    greenArray[led]--;
-                    blueArray[led]--;
-                    __delay_ms(5);
-                }
-                __delay_ms(5);
-            }
         } else { 
-            LED4 = 0;
-            for (led; led <= 30; led++) {
-                neopixel_fill(led, 200, 0, 100);
-                __delay_ms(5);
-            }
+            LED4 = 1;
         }
         
         
@@ -78,7 +63,7 @@ int main(void)
         
         
 //        int prevNum = halfLength;
-//        int leftNum = halfLength-1;
+//        int leftNum = halfLength-1; 
 //        int prevLeftNum = halfLength;
 //        // If SW2 is pressed, make a flashy light pattern
 //

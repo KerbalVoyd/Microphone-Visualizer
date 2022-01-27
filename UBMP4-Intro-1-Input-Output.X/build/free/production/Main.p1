@@ -30,13 +30,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1949
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1949: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
 [v _LATCbits `VS106 ~T0 @X0 0 e@270 ]
-"25 Main.c
-[; ;Main.c: 25: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]);
-[v _neopixel_fill_a `(v ~T0 @X0 0 ef4`uc`*uc`*uc`*uc ]
-"26
-[; ;Main.c: 26: void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue);
-[v _neopixel_fill `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
-"435 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+"435
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 435:     struct {
 [s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S34 . RA0 RA1 . RA3 RA4 RA5 ]
@@ -499,8 +493,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _greenArray `uc ~T0 @X0 -> 31 `i e ]
 [v _blueArray `uc ~T0 @X0 -> 31 `i e ]
 "37
-[; ;Main.c: 37: float sound;
-[v _sound `f ~T0 @X0 1 e ]
+[; ;Main.c: 37: int sound;
+[v _sound `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "40
 [; ;Main.c: 40: int main(void)
@@ -541,122 +535,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "54
 [; ;Main.c: 54:         sound = ADC_read();
-[e = _sound -> ( _ADC_read ..  `f ]
+[e = _sound -> ( _ADC_read ..  `i ]
 "55
-[; ;Main.c: 55:         if (sound >= 9) {
-[e $ ! >= _sound -> -> 9 `i `f 331  ]
+[; ;Main.c: 55:         if (sound > 150 || sound < 100) {
+[e $ ! || > _sound -> 150 `i < _sound -> 100 `i 331  ]
 {
 "56
 [; ;Main.c: 56:             LATCbits.LATC5 = 1;
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 "57
-[; ;Main.c: 57:             for (led; led >= 5; led--) {
-{
-[e _led ]
-[e $ >= _led -> 5 `i 332  ]
-[e $U 333  ]
-[e :U 332 ]
-{
-"58
-[; ;Main.c: 58:                 for (int i = 255; i <= 0; i--) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 255 `i ]
-[e $ <= _i -> 0 `i 335  ]
-[e $U 336  ]
-[e :U 335 ]
-{
-"59
-[; ;Main.c: 59:                     neopixel_fill_a(led, redArray, greenArray, blueArray);
-[e ( _neopixel_fill_a (4 , , , -> _led `uc &U _redArray &U _greenArray &U _blueArray ]
-"61
-[; ;Main.c: 61:                     redArray[led]--;
-[e -- *U + &U _redArray * -> -> _led `ui `ux -> -> # *U &U _redArray `ui `ux -> -> 1 `i `uc ]
-"62
-[; ;Main.c: 62:                     greenArray[led]--;
-[e -- *U + &U _greenArray * -> -> _led `ui `ux -> -> # *U &U _greenArray `ui `ux -> -> 1 `i `uc ]
-"63
-[; ;Main.c: 63:                     blueArray[led]--;
-[e -- *U + &U _blueArray * -> -> _led `ui `ux -> -> # *U &U _blueArray `ui `ux -> -> 1 `i `uc ]
-"64
-[; ;Main.c: 64:                     _delay((unsigned long)((5)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"65
-[; ;Main.c: 65:                 }
+[; ;Main.c: 57:         } else {
 }
-[e -- _i -> 1 `i ]
-[e $ <= _i -> 0 `i 335  ]
-[e :U 336 ]
-}
-"66
-[; ;Main.c: 66:                 _delay((unsigned long)((5)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"67
-[; ;Main.c: 67:             }
-}
-[e -- _led -> 1 `i ]
-[e $ >= _led -> 5 `i 332  ]
-[e :U 333 ]
-}
-"68
-[; ;Main.c: 68:         } else {
-}
-[e $U 338  ]
+[e $U 332  ]
 [e :U 331 ]
 {
-"69
-[; ;Main.c: 69:             LATCbits.LATC5 = 0;
-[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
-"70
-[; ;Main.c: 70:             for (led; led <= 30; led++) {
-{
-[e _led ]
-[e $ <= _led -> 30 `i 339  ]
-[e $U 340  ]
-[e :U 339 ]
-{
-"71
-[; ;Main.c: 71:                 neopixel_fill(led, 200, 0, 100);
-[e ( _neopixel_fill (4 , , , -> _led `uc -> -> 200 `i `uc -> -> 0 `i `uc -> -> 100 `i `uc ]
-"72
-[; ;Main.c: 72:                 _delay((unsigned long)((5)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"73
-[; ;Main.c: 73:             }
+"58
+[; ;Main.c: 58:             LATCbits.LATC5 = 1;
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+"59
+[; ;Main.c: 59:         }
 }
-[e ++ _led -> 1 `i ]
-[e $ <= _led -> 30 `i 339  ]
-[e :U 340 ]
-}
-"74
-[; ;Main.c: 74:         }
-}
-[e :U 338 ]
-"133
-[; ;Main.c: 133:         if(PORTAbits.RA3 == 0)
-[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 342  ]
-"134
-[; ;Main.c: 134:         {
+[e :U 332 ]
+"118
+[; ;Main.c: 118:         if(PORTAbits.RA3 == 0)
+[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 333  ]
+"119
+[; ;Main.c: 119:         {
 {
-"135
-[; ;Main.c: 135:             __asm("reset");
+"120
+[; ;Main.c: 120:             __asm("reset");
 [; <" reset ;# ">
-"136
-[; ;Main.c: 136:         }
+"121
+[; ;Main.c: 121:         }
 }
-[e :U 342 ]
-"139
-[; ;Main.c: 139:     }
+[e :U 333 ]
+"124
+[; ;Main.c: 124:     }
 }
 [e :U 328 ]
 [e $U 329  ]
 [e :U 330 ]
-"140
-[; ;Main.c: 140: }
+"125
+[; ;Main.c: 125: }
 [e :UE 327 ]
 }
-"142
-[; ;Main.c: 142: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]) {
+"127
+[; ;Main.c: 127: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]) {
 [v _neopixel_fill_a `(v ~T0 @X0 1 ef4`uc`*uc`*uc`*uc ]
 {
 [e :U _neopixel_fill_a ]
@@ -665,39 +589,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _green `*uc ~T0 @X0 1 r3 ]
 [v _blue `*uc ~T0 @X0 1 r4 ]
 [f ]
-"143
-[; ;Main.c: 143:     int ledNum = 0;
+"128
+[; ;Main.c: 128:     int ledNum = 0;
 [v _ledNum `i ~T0 @X0 1 a ]
 [e = _ledNum -> 0 `i ]
-"144
-[; ;Main.c: 144:     for(; ledNum != leds; ledNum++) {
+"129
+[; ;Main.c: 129:     for(; ledNum != leds; ledNum++) {
 {
-[e $U 347  ]
-[e :U 344 ]
+[e $U 338  ]
+[e :U 335 ]
 {
-"145
-[; ;Main.c: 145:         neopixel_send(green[ledNum]);
+"130
+[; ;Main.c: 130:         neopixel_send(green[ledNum]);
 [e ( _neopixel_send (1 *U + _green * -> _ledNum `x -> -> # *U _green `i `x ]
-"146
-[; ;Main.c: 146:         neopixel_send(red[ledNum]);
+"131
+[; ;Main.c: 131:         neopixel_send(red[ledNum]);
 [e ( _neopixel_send (1 *U + _red * -> _ledNum `x -> -> # *U _red `i `x ]
-"147
-[; ;Main.c: 147:         neopixel_send(blue[ledNum]);
+"132
+[; ;Main.c: 132:         neopixel_send(blue[ledNum]);
 [e ( _neopixel_send (1 *U + _blue * -> _ledNum `x -> -> # *U _blue `i `x ]
-"148
-[; ;Main.c: 148:     }
+"133
+[; ;Main.c: 133:     }
 }
 [e ++ _ledNum -> 1 `i ]
-[e :U 347 ]
-[e $ != _ledNum -> _leds `i 344  ]
-[e :U 345 ]
+[e :U 338 ]
+[e $ != _ledNum -> _leds `i 335  ]
+[e :U 336 ]
 }
-"149
-[; ;Main.c: 149: }
-[e :UE 343 ]
+"134
+[; ;Main.c: 134: }
+[e :UE 334 ]
 }
-"151
-[; ;Main.c: 151: void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue) {
+"136
+[; ;Main.c: 136: void neopixel_fill(unsigned char leds, unsigned char red, unsigned char green, unsigned char blue) {
 [v _neopixel_fill `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
 [e :U _neopixel_fill ]
@@ -706,90 +630,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _green `uc ~T0 @X0 1 r3 ]
 [v _blue `uc ~T0 @X0 1 r4 ]
 [f ]
-"152
-[; ;Main.c: 152:     for (; leds != 0; leds--) {
+"137
+[; ;Main.c: 137:     for (; leds != 0; leds--) {
 {
-[e $ != -> _leds `i -> 0 `i 349  ]
-[e $U 350  ]
-[e :U 349 ]
+[e $ != -> _leds `i -> 0 `i 340  ]
+[e $U 341  ]
+[e :U 340 ]
 {
-"153
-[; ;Main.c: 153:         neopixel_send(green);
+"138
+[; ;Main.c: 138:         neopixel_send(green);
 [e ( _neopixel_send (1 _green ]
-"154
-[; ;Main.c: 154:         neopixel_send(red);
+"139
+[; ;Main.c: 139:         neopixel_send(red);
 [e ( _neopixel_send (1 _red ]
-"155
-[; ;Main.c: 155:         neopixel_send(blue);
+"140
+[; ;Main.c: 140:         neopixel_send(blue);
 [e ( _neopixel_send (1 _blue ]
-"156
-[; ;Main.c: 156:     }
+"141
+[; ;Main.c: 141:     }
 }
 [e -- _leds -> -> 1 `i `uc ]
-[e $ != -> _leds `i -> 0 `i 349  ]
-[e :U 350 ]
+[e $ != -> _leds `i -> 0 `i 340  ]
+[e :U 341 ]
 }
-"158
-[; ;Main.c: 158: }
-[e :UE 348 ]
+"143
+[; ;Main.c: 143: }
+[e :UE 339 ]
 }
-"160
-[; ;Main.c: 160: void neopixel_send(unsigned char colour)
+"145
+[; ;Main.c: 145: void neopixel_send(unsigned char colour)
 [v _neopixel_send `(v ~T0 @X0 1 ef1`uc ]
-"161
-[; ;Main.c: 161: {
+"146
+[; ;Main.c: 146: {
 {
 [e :U _neopixel_send ]
-"160
-[; ;Main.c: 160: void neopixel_send(unsigned char colour)
+"145
+[; ;Main.c: 145: void neopixel_send(unsigned char colour)
 [v _colour `uc ~T0 @X0 1 r1 ]
-"161
-[; ;Main.c: 161: {
+"146
+[; ;Main.c: 146: {
 [f ]
-"162
-[; ;Main.c: 162:     for(unsigned char bits = 8; bits != 0; bits --)
+"147
+[; ;Main.c: 147:     for(unsigned char bits = 8; bits != 0; bits --)
 {
 [v _bits `uc ~T0 @X0 1 a ]
 [e = _bits -> -> 8 `i `uc ]
-[e $ != -> _bits `i -> 0 `i 353  ]
-[e $U 354  ]
-[e :U 353 ]
-"163
-[; ;Main.c: 163:     {
+[e $ != -> _bits `i -> 0 `i 344  ]
+[e $U 345  ]
+[e :U 344 ]
+"148
+[; ;Main.c: 148:     {
 {
-"164
-[; ;Main.c: 164:         LATCbits.LATC1 = 1;
+"149
+[; ;Main.c: 149:         LATCbits.LATC1 = 1;
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"165
-[; ;Main.c: 165:         if((colour & 0b10000000) == 0)
-[e $ ! == & -> _colour `i -> 128 `i -> 0 `i 356  ]
-"166
-[; ;Main.c: 166:         {
+"150
+[; ;Main.c: 150:         if((colour & 0b10000000) == 0)
+[e $ ! == & -> _colour `i -> 128 `i -> 0 `i 347  ]
+"151
+[; ;Main.c: 151:         {
 {
-"167
-[; ;Main.c: 167:             LATCbits.LATC1 = 0;
+"152
+[; ;Main.c: 152:             LATCbits.LATC1 = 0;
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"168
-[; ;Main.c: 168:         }
+"153
+[; ;Main.c: 153:         }
 }
-[e :U 356 ]
-"169
-[; ;Main.c: 169:         __nop();
+[e :U 347 ]
+"154
+[; ;Main.c: 154:         __nop();
 [e ( ___nop ..  ]
-"170
-[; ;Main.c: 170:         LATCbits.LATC1 = 0;
+"155
+[; ;Main.c: 155:         LATCbits.LATC1 = 0;
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"171
-[; ;Main.c: 171:         colour = colour << 1;
+"156
+[; ;Main.c: 156:         colour = colour << 1;
 [e = _colour -> << -> _colour `i -> 1 `i `uc ]
-"172
-[; ;Main.c: 172:     }
+"157
+[; ;Main.c: 157:     }
 }
 [e -- _bits -> -> 1 `i `uc ]
-[e $ != -> _bits `i -> 0 `i 353  ]
-[e :U 354 ]
+[e $ != -> _bits `i -> 0 `i 344  ]
+[e :U 345 ]
 }
-"173
-[; ;Main.c: 173: }
-[e :UE 352 ]
+"158
+[; ;Main.c: 158: }
+[e :UE 343 ]
 }
