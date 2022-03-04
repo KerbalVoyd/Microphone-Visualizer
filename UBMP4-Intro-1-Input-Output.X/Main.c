@@ -149,7 +149,7 @@ void pulsingRGB() {
     __delay_ms(15);
 }
 
-unsigned int soundV2;
+unsigned int amplitude;
 unsigned int soundMemory;
 unsigned int sound;
 int main(void)
@@ -167,24 +167,18 @@ int main(void)
 	{
 
         sound = ADC_read();
-        soundV2 = soundMemory - centerPoint;
-        if (sound > 200 || sound < 200) {
+        amplitude = sound - centerPoint;
+        if (sound > 180 || sound < 72){
             
-            soundMemory = sound;
-            
-        }
-        if (soundMemory > 200 || soundMemory < 200) {
-            LED4 = 1;
-        } else {
-            LED4 = 0;
-        }
-        
-        if (sound > -130) {
             LED3 = 1;
-        } else {
-            LED3 = 0;
+            __delay_ms(100);
+            
         }
-        
+        if (sound == 8){
+            LED3 = 0; 
+            LED4 = 1;
+            __delay_ms(1000);
+        }        
 
         
         

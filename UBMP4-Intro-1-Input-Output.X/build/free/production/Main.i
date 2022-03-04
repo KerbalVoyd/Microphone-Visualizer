@@ -3977,7 +3977,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 15 "Main.c" 2
+# 14 "Main.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4063,9 +4064,11 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
-# 16 "Main.c" 2
+# 15 "Main.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 17 "Main.c" 2
+# 16 "Main.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\math.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4438,7 +4441,8 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 18 "Main.c" 2
+# 17 "Main.c" 2
+
 # 1 "./UBMP4.h" 1
 # 105 "./UBMP4.h"
 void OSC_config(void);
@@ -4462,7 +4466,8 @@ void ADC_select_channel(unsigned char);
 unsigned char ADC_read(void);
 # 148 "./UBMP4.h"
 unsigned char ADC_read_channel(unsigned char);
-# 19 "Main.c" 2
+# 18 "Main.c" 2
+
 
 
 
@@ -4587,7 +4592,7 @@ void pulsingRGB() {
     _delay((unsigned long)((15)*(48000000/4000.0)));
 }
 
-unsigned int soundV2;
+unsigned int amplitude;
 unsigned int soundMemory;
 unsigned int sound;
 int main(void)
@@ -4605,24 +4610,19 @@ int main(void)
  {
 
         sound = ADC_read();
-        soundV2 = soundMemory - 127;
-        if (sound > 200 || sound < 200) {
+        amplitude = sound - 127;
+        if (sound > 180 || sound < 72){
 
-            soundMemory = sound;
-
-        }
-        if (soundMemory > 200 || soundMemory < 200) {
-            LATCbits.LATC5 = 1;
-        } else {
-            LATCbits.LATC5 = 0;
-        }
-
-        if (sound > -130) {
             LATCbits.LATC4 = 1;
-        } else {
-            LATCbits.LATC4 = 0;
+            _delay((unsigned long)((100)*(48000000/4000.0)));
+
         }
-# 245 "Main.c"
+        if (sound == 8){
+            LATCbits.LATC4 = 0;
+            LATCbits.LATC5 = 1;
+            _delay((unsigned long)((1000)*(48000000/4000.0)));
+        }
+# 239 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");
@@ -4640,7 +4640,7 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
         neopixel_send(blue[ledNum]);
     }
 }
-# 272 "Main.c"
+# 266 "Main.c"
 void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)

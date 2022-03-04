@@ -11,15 +11,15 @@
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"65 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+"65 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
 [v _hsvToRGB hsvToRGB `(v  1 e 1 0 ]
 "155
 [v _main main `(i  1 e 2 0 ]
-"254
+"248
 [v _neopixel_fill_a neopixel_fill_a `(v  1 e 1 0 ]
-"272
+"266
 [v _neopixel_send neopixel_send `(v  1 e 1 0 ]
-"21 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+"21 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
 "29
 [v _UBMP4_config UBMP4_config `(v  1 e 1 0 ]
@@ -105,7 +105,7 @@
 [v _GO GO `VEb  1 e 0 @1257 ]
 "6898
 [v _PLLRDY PLLRDY `VEb  1 e 0 @1238 ]
-"41 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+"41 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
 [v _redS redS `[10]uc  1 e 10 0 ]
 "42
 [v _greenS greenS `[10]uc  1 e 10 0 ]
@@ -120,17 +120,15 @@
 "124
 [v _rev rev `a  1 e 1 0 ]
 "152
-[v _soundV2 soundV2 `ui  1 e 2 0 ]
-"153
-[v _soundMemory soundMemory `ui  1 e 2 0 ]
+[v _amplitude amplitude `ui  1 e 2 0 ]
 "154
 [v _sound sound `ui  1 e 2 0 ]
 "155
 [v _main main `(i  1 e 2 0 ]
 {
-"252
+"246
 } 0
-"29 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\New thing\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+"29 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _UBMP4_config UBMP4_config `(v  1 e 1 0 ]
 {
 "48
