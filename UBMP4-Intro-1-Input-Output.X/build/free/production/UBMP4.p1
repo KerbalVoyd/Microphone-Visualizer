@@ -573,11 +573,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;UBMP4.c: 43:     LATC = 0b00000000;
 [e = _LATC -> -> 0 `i `uc ]
 "44
-[; ;UBMP4.c: 44:     TRISC = 0b00001100;
-[e = _TRISC -> -> 12 `i `uc ]
+[; ;UBMP4.c: 44:     TRISC = 0b00001111;
+[e = _TRISC -> -> 15 `i `uc ]
 "45
-[; ;UBMP4.c: 45:     ANSELC = 0b00000000;
-[e = _ANSELC -> -> 0 `i `uc ]
+[; ;UBMP4.c: 45:     ANSELC = 0b00000001;
+[e = _ANSELC -> -> 1 `i `uc ]
 "48
 [; ;UBMP4.c: 48: }
 [e :UE 331 ]

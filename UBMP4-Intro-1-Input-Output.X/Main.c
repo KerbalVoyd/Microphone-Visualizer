@@ -171,14 +171,12 @@ int main(void)
         if (sound > 180 || sound < 72){
             
             LED3 = 1;
-            __delay_ms(100);
+            __delay_ms(200);
             
+        } else {
+            
+            LED3 = 0;
         }
-        if (sound == 8){
-            LED3 = 0; 
-            LED4 = 1;
-            __delay_ms(1000);
-        }        
 
         
         

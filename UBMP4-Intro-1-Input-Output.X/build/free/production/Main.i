@@ -4614,15 +4614,13 @@ int main(void)
         if (sound > 180 || sound < 72){
 
             LATCbits.LATC4 = 1;
-            _delay((unsigned long)((100)*(48000000/4000.0)));
+            _delay((unsigned long)((200)*(48000000/4000.0)));
 
-        }
-        if (sound == 8){
+        } else {
+
             LATCbits.LATC4 = 0;
-            LATCbits.LATC5 = 1;
-            _delay((unsigned long)((1000)*(48000000/4000.0)));
         }
-# 239 "Main.c"
+# 237 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");
@@ -4640,7 +4638,7 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
         neopixel_send(blue[ledNum]);
     }
 }
-# 266 "Main.c"
+# 264 "Main.c"
 void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)
