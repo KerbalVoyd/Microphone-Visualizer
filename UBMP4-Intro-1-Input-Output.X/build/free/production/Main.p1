@@ -22,18 +22,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "138
 [; ;./UBMP4.h: 138: unsigned char ADC_read(void);
 [v _ADC_read `(uc ~T0 @X0 0 ef ]
-"1938 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1938:     struct {
-[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S107 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"1937
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1937: typedef union {
-[u S106 `S107 1 ]
-[n S106 . . ]
-"1949
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1949: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
-[v _LATCbits `VS106 ~T0 @X0 0 e@270 ]
-"435
+"435 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 435:     struct {
 [s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S34 . RA0 RA1 . RA3 RA4 RA5 ]
@@ -47,6 +36,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24 Main.c
 [; ;Main.c: 24: void neopixel_send(unsigned char colour);
 [v _neopixel_send `(v ~T0 @X0 0 ef1`uc ]
+"1938 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1938:     struct {
+[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S107 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"1937
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1937: typedef union {
+[u S106 `S107 1 ]
+[n S106 . . ]
+"1949
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1949: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS106 ~T0 @X0 0 e@270 ]
 "31 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -897,56 +897,125 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 169:         sound = ADC_read();
 [e = _sound -> ( _ADC_read ..  `ui ]
 "170
-[; ;Main.c: 170:         amplitude = sound - 127;
-[e = _amplitude - _sound -> -> 127 `i `ui ]
+[; ;Main.c: 170:         if (sound > 128) {
+[e $ ! > _sound -> -> 128 `i `ui 351  ]
+{
 "171
-[; ;Main.c: 171:         if (sound > 180 || sound < 72){
-[e $ ! || > _sound -> -> 180 `i `ui < _sound -> -> 72 `i `ui 351  ]
-{
-"173
-[; ;Main.c: 173:             LATCbits.LATC4 = 1;
-[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
-"174
-[; ;Main.c: 174:             _delay((unsigned long)((200)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"176
-[; ;Main.c: 176:         } else {
+[; ;Main.c: 171:         amplitude = sound - 127;
+[e = _amplitude - _sound -> -> 127 `i `ui ]
+"172
+[; ;Main.c: 172:         }
 }
-[e $U 352  ]
 [e :U 351 ]
+"173
+[; ;Main.c: 173:         int prevNum = 0;
+[v _prevNum `i ~T0 @X0 1 a ]
+[e = _prevNum -> 0 `i ]
+"174
+[; ;Main.c: 174:         if (sound > 160 || sound < 92){
+[e $ ! || > _sound -> -> 160 `i `ui < _sound -> -> 92 `i `ui 352  ]
 {
-"178
-[; ;Main.c: 178:             LATCbits.LATC4 = 0;
-[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
-"179
-[; ;Main.c: 179:         }
-}
-[e :U 352 ]
-"237
-[; ;Main.c: 237:         if(PORTAbits.RA3 == 0)
-[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 353  ]
-"238
-[; ;Main.c: 238:         {
+"176
+[; ;Main.c: 176:             for (int i = 0; i <= amplitude/2; i++) {
 {
-"239
-[; ;Main.c: 239:             __asm("reset");
-[; <" reset ;# ">
-"240
-[; ;Main.c: 240:         }
-}
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 356  ]
 [e :U 353 ]
-"243
-[; ;Main.c: 243:     }
+{
+"177
+[; ;Main.c: 177:                 for (int ii = 0; ii < 255; ii+=amplitude) {
+{
+[v _ii `i ~T0 @X0 1 a ]
+[e = _ii -> 0 `i ]
+[e $ < _ii -> 255 `i 357  ]
+[e $U 358  ]
+[e :U 357 ]
+{
+"179
+[; ;Main.c: 179:                     redArray[i]+=amplitude;
+[e =+ *U + &U _redArray * -> -> _i `ui `ux -> -> # *U &U _redArray `ui `ux -> _amplitude `uc ]
+"182
+[; ;Main.c: 182:                     neopixel_fill_a(30, redArray, greenArray, blueArray);
+[e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
+"184
+[; ;Main.c: 184:                 }
+}
+[e =+ _ii -> _amplitude `i ]
+[e $ < _ii -> 255 `i 357  ]
+[e :U 358 ]
+}
+"185
+[; ;Main.c: 185:             prevNum = i;
+[e = _prevNum _i ]
+"187
+[; ;Main.c: 187:         }
+}
+[e ++ _i -> 1 `i ]
+[e :U 356 ]
+[e $ <= -> _i `ui / _amplitude -> -> 2 `i `ui 353  ]
+[e :U 354 ]
+}
+"189
+[; ;Main.c: 189:         } else {
+}
+[e $U 360  ]
+[e :U 352 ]
+{
+"190
+[; ;Main.c: 190:             _delay((unsigned long)((100)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"191
+[; ;Main.c: 191:             for (int i = 0; i <= 30; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ <= _i -> 30 `i 361  ]
+[e $U 362  ]
+[e :U 361 ]
+{
+"192
+[; ;Main.c: 192:             redArray[i] = 0;
+[e = *U + &U _redArray * -> -> _i `ui `ux -> -> # *U &U _redArray `ui `ux -> -> 0 `i `uc ]
+"193
+[; ;Main.c: 193:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ <= _i -> 30 `i 361  ]
+[e :U 362 ]
+}
+"194
+[; ;Main.c: 194:             neopixel_fill_a(30, redArray, greenArray, blueArray);
+[e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
+"195
+[; ;Main.c: 195:         }
+}
+[e :U 360 ]
+"253
+[; ;Main.c: 253:         if(PORTAbits.RA3 == 0)
+[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 364  ]
+"254
+[; ;Main.c: 254:         {
+{
+"255
+[; ;Main.c: 255:             __asm("reset");
+[; <" reset ;# ">
+"256
+[; ;Main.c: 256:         }
+}
+[e :U 364 ]
+"259
+[; ;Main.c: 259:     }
 }
 [e :U 348 ]
 [e $U 349  ]
 [e :U 350 ]
-"244
-[; ;Main.c: 244: }
+"260
+[; ;Main.c: 260: }
 [e :UE 347 ]
 }
-"246
-[; ;Main.c: 246: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]) {
+"262
+[; ;Main.c: 262: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]) {
 [v _neopixel_fill_a `(v ~T0 @X0 1 ef4`uc`*uc`*uc`*uc ]
 {
 [e :U _neopixel_fill_a ]
@@ -955,94 +1024,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _green `*uc ~T0 @X0 1 r3 ]
 [v _blue `*uc ~T0 @X0 1 r4 ]
 [f ]
-"247
-[; ;Main.c: 247:     int ledNum = 0;
+"263
+[; ;Main.c: 263:     int ledNum = 0;
 [v _ledNum `i ~T0 @X0 1 a ]
 [e = _ledNum -> 0 `i ]
-"248
-[; ;Main.c: 248:     for(; ledNum != leds; ledNum++) {
+"264
+[; ;Main.c: 264:     for(; ledNum != leds; ledNum++) {
 {
-[e $U 358  ]
-[e :U 355 ]
+[e $U 369  ]
+[e :U 366 ]
 {
-"249
-[; ;Main.c: 249:         neopixel_send(green[ledNum]);
+"265
+[; ;Main.c: 265:         neopixel_send(green[ledNum]);
 [e ( _neopixel_send (1 *U + _green * -> _ledNum `x -> -> # *U _green `i `x ]
-"250
-[; ;Main.c: 250:         neopixel_send(red[ledNum]);
+"266
+[; ;Main.c: 266:         neopixel_send(red[ledNum]);
 [e ( _neopixel_send (1 *U + _red * -> _ledNum `x -> -> # *U _red `i `x ]
-"251
-[; ;Main.c: 251:         neopixel_send(blue[ledNum]);
+"267
+[; ;Main.c: 267:         neopixel_send(blue[ledNum]);
 [e ( _neopixel_send (1 *U + _blue * -> _ledNum `x -> -> # *U _blue `i `x ]
-"252
-[; ;Main.c: 252:     }
+"268
+[; ;Main.c: 268:     }
 }
 [e ++ _ledNum -> 1 `i ]
-[e :U 358 ]
-[e $ != _ledNum -> _leds `i 355  ]
-[e :U 356 ]
+[e :U 369 ]
+[e $ != _ledNum -> _leds `i 366  ]
+[e :U 367 ]
 }
-"253
-[; ;Main.c: 253: }
-[e :UE 354 ]
+"269
+[; ;Main.c: 269: }
+[e :UE 365 ]
 }
-"264
-[; ;Main.c: 264: void neopixel_send(unsigned char colour)
+"280
+[; ;Main.c: 280: void neopixel_send(unsigned char colour)
 [v _neopixel_send `(v ~T0 @X0 1 ef1`uc ]
-"265
-[; ;Main.c: 265: {
+"281
+[; ;Main.c: 281: {
 {
 [e :U _neopixel_send ]
-"264
-[; ;Main.c: 264: void neopixel_send(unsigned char colour)
+"280
+[; ;Main.c: 280: void neopixel_send(unsigned char colour)
 [v _colour `uc ~T0 @X0 1 r1 ]
-"265
-[; ;Main.c: 265: {
+"281
+[; ;Main.c: 281: {
 [f ]
-"266
-[; ;Main.c: 266:     for(unsigned char bits = 8; bits != 0; bits --)
+"282
+[; ;Main.c: 282:     for(unsigned char bits = 8; bits != 0; bits --)
 {
 [v _bits `uc ~T0 @X0 1 a ]
 [e = _bits -> -> 8 `i `uc ]
-[e $ != -> _bits `i -> 0 `i 360  ]
-[e $U 361  ]
-[e :U 360 ]
-"267
-[; ;Main.c: 267:     {
+[e $ != -> _bits `i -> 0 `i 371  ]
+[e $U 372  ]
+[e :U 371 ]
+"283
+[; ;Main.c: 283:     {
 {
-"268
-[; ;Main.c: 268:         LATCbits.LATC1 = 1;
+"284
+[; ;Main.c: 284:         LATCbits.LATC1 = 1;
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"269
-[; ;Main.c: 269:         if((colour & 0b10000000) == 0)
-[e $ ! == & -> _colour `i -> 128 `i -> 0 `i 363  ]
-"270
-[; ;Main.c: 270:         {
+"285
+[; ;Main.c: 285:         if((colour & 0b10000000) == 0)
+[e $ ! == & -> _colour `i -> 128 `i -> 0 `i 374  ]
+"286
+[; ;Main.c: 286:         {
 {
-"271
-[; ;Main.c: 271:             LATCbits.LATC1 = 0;
+"287
+[; ;Main.c: 287:             LATCbits.LATC1 = 0;
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"272
-[; ;Main.c: 272:         }
+"288
+[; ;Main.c: 288:         }
 }
-[e :U 363 ]
-"273
-[; ;Main.c: 273:         __nop();
+[e :U 374 ]
+"289
+[; ;Main.c: 289:         __nop();
 [e ( ___nop ..  ]
-"274
-[; ;Main.c: 274:         LATCbits.LATC1 = 0;
+"290
+[; ;Main.c: 290:         LATCbits.LATC1 = 0;
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"275
-[; ;Main.c: 275:         colour = colour << 1;
+"291
+[; ;Main.c: 291:         colour = colour << 1;
 [e = _colour -> << -> _colour `i -> 1 `i `uc ]
-"276
-[; ;Main.c: 276:     }
+"292
+[; ;Main.c: 292:     }
 }
 [e -- _bits -> -> 1 `i `uc ]
-[e $ != -> _bits `i -> 0 `i 360  ]
-[e :U 361 ]
+[e $ != -> _bits `i -> 0 `i 371  ]
+[e :U 372 ]
 }
-"277
-[; ;Main.c: 277: }
-[e :UE 359 ]
+"293
+[; ;Main.c: 293: }
+[e :UE 370 ]
 }

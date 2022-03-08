@@ -167,15 +167,31 @@ int main(void)
 	{
 
         sound = ADC_read();
+        if (sound > 128) {
         amplitude = sound - centerPoint;
-        if (sound > 180 || sound < 72){
+        }
+        int prevNum = 0;
+        if (sound > 160 || sound < 92){
             
-            LED3 = 1;
-            __delay_ms(200);
+            for (int i = 0; i <= amplitude/2; i++) {
+                for (int ii = 0; ii < 255; ii+=amplitude) {
+
+                    redArray[i]+=amplitude;
+                   //redArray[prevNum]-=speed;
+
+                    neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+
+                }
+            prevNum = i;
+            
+        }
             
         } else {
-            
-            LED3 = 0;
+            __delay_ms(100);
+            for (int i = 0; i <= 30; i++) {
+            redArray[i] = 0;
+            }
+            neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
         }
 
         

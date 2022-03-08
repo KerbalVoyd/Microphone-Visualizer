@@ -4610,17 +4610,33 @@ int main(void)
  {
 
         sound = ADC_read();
+        if (sound > 128) {
         amplitude = sound - 127;
-        if (sound > 180 || sound < 72){
+        }
+        int prevNum = 0;
+        if (sound > 160 || sound < 92){
 
-            LATCbits.LATC4 = 1;
-            _delay((unsigned long)((200)*(48000000/4000.0)));
+            for (int i = 0; i <= amplitude/2; i++) {
+                for (int ii = 0; ii < 255; ii+=amplitude) {
+
+                    redArray[i]+=amplitude;
+
+
+                    neopixel_fill_a(30, redArray, greenArray, blueArray);
+
+                }
+            prevNum = i;
+
+        }
 
         } else {
-
-            LATCbits.LATC4 = 0;
+            _delay((unsigned long)((100)*(48000000/4000.0)));
+            for (int i = 0; i <= 30; i++) {
+            redArray[i] = 0;
+            }
+            neopixel_fill_a(30, redArray, greenArray, blueArray);
         }
-# 237 "Main.c"
+# 253 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");
@@ -4638,7 +4654,7 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
         neopixel_send(blue[ledNum]);
     }
 }
-# 264 "Main.c"
+# 280 "Main.c"
 void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)
