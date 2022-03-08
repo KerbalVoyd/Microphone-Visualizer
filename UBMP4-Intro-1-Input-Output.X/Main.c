@@ -171,27 +171,26 @@ int main(void)
         amplitude = sound - centerPoint;
         }
         int prevNum = 0;
-        if (sound > 160 || sound < 92){
+        if (sound > 140 || sound < 110){
             
-            for (int i = 0; i <= amplitude/2; i++) {
-                for (int ii = 0; ii < 255; ii+=amplitude) {
+            for (int i = 0; i <= amplitude/4; i++) {
 
-                    redArray[i]+=amplitude;
+                    redArray[i]+=128;
                    //redArray[prevNum]-=speed;
 
                     neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-
-                }
+                    __delay_ms(5);
             prevNum = i;
             
         }
             
         } else {
-            __delay_ms(100);
             for (int i = 0; i <= 30; i++) {
             redArray[i] = 0;
-            }
             neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+            __delay_ms(1);
+            }
+            
         }
 
         

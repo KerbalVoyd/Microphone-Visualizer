@@ -912,110 +912,97 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _prevNum `i ~T0 @X0 1 a ]
 [e = _prevNum -> 0 `i ]
 "174
-[; ;Main.c: 174:         if (sound > 160 || sound < 92){
-[e $ ! || > _sound -> -> 160 `i `ui < _sound -> -> 92 `i `ui 352  ]
+[; ;Main.c: 174:         if (sound > 140 || sound < 110){
+[e $ ! || > _sound -> -> 140 `i `ui < _sound -> -> 110 `i `ui 352  ]
 {
 "176
-[; ;Main.c: 176:             for (int i = 0; i <= amplitude/2; i++) {
+[; ;Main.c: 176:             for (int i = 0; i <= amplitude/4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 356  ]
 [e :U 353 ]
 {
-"177
-[; ;Main.c: 177:                 for (int ii = 0; ii < 255; ii+=amplitude) {
-{
-[v _ii `i ~T0 @X0 1 a ]
-[e = _ii -> 0 `i ]
-[e $ < _ii -> 255 `i 357  ]
-[e $U 358  ]
-[e :U 357 ]
-{
-"179
-[; ;Main.c: 179:                     redArray[i]+=amplitude;
-[e =+ *U + &U _redArray * -> -> _i `ui `ux -> -> # *U &U _redArray `ui `ux -> _amplitude `uc ]
-"182
-[; ;Main.c: 182:                     neopixel_fill_a(30, redArray, greenArray, blueArray);
+"178
+[; ;Main.c: 178:                     redArray[i]+=128;
+[e =+ *U + &U _redArray * -> -> _i `ui `ux -> -> # *U &U _redArray `ui `ux -> -> 128 `i `uc ]
+"181
+[; ;Main.c: 181:                     neopixel_fill_a(30, redArray, greenArray, blueArray);
 [e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
-"184
-[; ;Main.c: 184:                 }
-}
-[e =+ _ii -> _amplitude `i ]
-[e $ < _ii -> 255 `i 357  ]
-[e :U 358 ]
-}
-"185
-[; ;Main.c: 185:             prevNum = i;
+"182
+[; ;Main.c: 182:                     _delay((unsigned long)((5)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"183
+[; ;Main.c: 183:             prevNum = i;
 [e = _prevNum _i ]
-"187
-[; ;Main.c: 187:         }
+"185
+[; ;Main.c: 185:         }
 }
 [e ++ _i -> 1 `i ]
 [e :U 356 ]
-[e $ <= -> _i `ui / _amplitude -> -> 2 `i `ui 353  ]
+[e $ <= -> _i `ui / _amplitude -> -> 4 `i `ui 353  ]
 [e :U 354 ]
 }
-"189
-[; ;Main.c: 189:         } else {
+"187
+[; ;Main.c: 187:         } else {
 }
-[e $U 360  ]
+[e $U 357  ]
 [e :U 352 ]
 {
-"190
-[; ;Main.c: 190:             _delay((unsigned long)((100)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"191
-[; ;Main.c: 191:             for (int i = 0; i <= 30; i++) {
+"188
+[; ;Main.c: 188:             for (int i = 0; i <= 30; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ <= _i -> 30 `i 361  ]
-[e $U 362  ]
-[e :U 361 ]
+[e $ <= _i -> 30 `i 358  ]
+[e $U 359  ]
+[e :U 358 ]
 {
-"192
-[; ;Main.c: 192:             redArray[i] = 0;
+"189
+[; ;Main.c: 189:             redArray[i] = 0;
 [e = *U + &U _redArray * -> -> _i `ui `ux -> -> # *U &U _redArray `ui `ux -> -> 0 `i `uc ]
-"193
-[; ;Main.c: 193:             }
+"190
+[; ;Main.c: 190:             neopixel_fill_a(30, redArray, greenArray, blueArray);
+[e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
+"191
+[; ;Main.c: 191:             _delay((unsigned long)((1)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"192
+[; ;Main.c: 192:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 30 `i 361  ]
-[e :U 362 ]
+[e $ <= _i -> 30 `i 358  ]
+[e :U 359 ]
 }
 "194
-[; ;Main.c: 194:             neopixel_fill_a(30, redArray, greenArray, blueArray);
-[e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
-"195
-[; ;Main.c: 195:         }
+[; ;Main.c: 194:         }
 }
-[e :U 360 ]
+[e :U 357 ]
+"252
+[; ;Main.c: 252:         if(PORTAbits.RA3 == 0)
+[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 361  ]
 "253
-[; ;Main.c: 253:         if(PORTAbits.RA3 == 0)
-[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 364  ]
-"254
-[; ;Main.c: 254:         {
+[; ;Main.c: 253:         {
 {
-"255
-[; ;Main.c: 255:             __asm("reset");
+"254
+[; ;Main.c: 254:             __asm("reset");
 [; <" reset ;# ">
-"256
-[; ;Main.c: 256:         }
+"255
+[; ;Main.c: 255:         }
 }
-[e :U 364 ]
-"259
-[; ;Main.c: 259:     }
+[e :U 361 ]
+"258
+[; ;Main.c: 258:     }
 }
 [e :U 348 ]
 [e $U 349  ]
 [e :U 350 ]
-"260
-[; ;Main.c: 260: }
+"259
+[; ;Main.c: 259: }
 [e :UE 347 ]
 }
-"262
-[; ;Main.c: 262: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]) {
+"261
+[; ;Main.c: 261: void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char green[], unsigned char blue[]) {
 [v _neopixel_fill_a `(v ~T0 @X0 1 ef4`uc`*uc`*uc`*uc ]
 {
 [e :U _neopixel_fill_a ]
@@ -1024,94 +1011,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _green `*uc ~T0 @X0 1 r3 ]
 [v _blue `*uc ~T0 @X0 1 r4 ]
 [f ]
-"263
-[; ;Main.c: 263:     int ledNum = 0;
+"262
+[; ;Main.c: 262:     int ledNum = 0;
 [v _ledNum `i ~T0 @X0 1 a ]
 [e = _ledNum -> 0 `i ]
+"263
+[; ;Main.c: 263:     for(; ledNum != leds; ledNum++) {
+{
+[e $U 366  ]
+[e :U 363 ]
+{
 "264
-[; ;Main.c: 264:     for(; ledNum != leds; ledNum++) {
-{
-[e $U 369  ]
-[e :U 366 ]
-{
-"265
-[; ;Main.c: 265:         neopixel_send(green[ledNum]);
+[; ;Main.c: 264:         neopixel_send(green[ledNum]);
 [e ( _neopixel_send (1 *U + _green * -> _ledNum `x -> -> # *U _green `i `x ]
-"266
-[; ;Main.c: 266:         neopixel_send(red[ledNum]);
+"265
+[; ;Main.c: 265:         neopixel_send(red[ledNum]);
 [e ( _neopixel_send (1 *U + _red * -> _ledNum `x -> -> # *U _red `i `x ]
-"267
-[; ;Main.c: 267:         neopixel_send(blue[ledNum]);
+"266
+[; ;Main.c: 266:         neopixel_send(blue[ledNum]);
 [e ( _neopixel_send (1 *U + _blue * -> _ledNum `x -> -> # *U _blue `i `x ]
-"268
-[; ;Main.c: 268:     }
+"267
+[; ;Main.c: 267:     }
 }
 [e ++ _ledNum -> 1 `i ]
-[e :U 369 ]
-[e $ != _ledNum -> _leds `i 366  ]
-[e :U 367 ]
+[e :U 366 ]
+[e $ != _ledNum -> _leds `i 363  ]
+[e :U 364 ]
 }
-"269
-[; ;Main.c: 269: }
-[e :UE 365 ]
+"268
+[; ;Main.c: 268: }
+[e :UE 362 ]
 }
-"280
-[; ;Main.c: 280: void neopixel_send(unsigned char colour)
+"279
+[; ;Main.c: 279: void neopixel_send(unsigned char colour)
 [v _neopixel_send `(v ~T0 @X0 1 ef1`uc ]
-"281
-[; ;Main.c: 281: {
+"280
+[; ;Main.c: 280: {
 {
 [e :U _neopixel_send ]
-"280
-[; ;Main.c: 280: void neopixel_send(unsigned char colour)
+"279
+[; ;Main.c: 279: void neopixel_send(unsigned char colour)
 [v _colour `uc ~T0 @X0 1 r1 ]
-"281
-[; ;Main.c: 281: {
+"280
+[; ;Main.c: 280: {
 [f ]
-"282
-[; ;Main.c: 282:     for(unsigned char bits = 8; bits != 0; bits --)
+"281
+[; ;Main.c: 281:     for(unsigned char bits = 8; bits != 0; bits --)
 {
 [v _bits `uc ~T0 @X0 1 a ]
 [e = _bits -> -> 8 `i `uc ]
-[e $ != -> _bits `i -> 0 `i 371  ]
-[e $U 372  ]
-[e :U 371 ]
+[e $ != -> _bits `i -> 0 `i 368  ]
+[e $U 369  ]
+[e :U 368 ]
+"282
+[; ;Main.c: 282:     {
+{
 "283
-[; ;Main.c: 283:     {
-{
-"284
-[; ;Main.c: 284:         LATCbits.LATC1 = 1;
+[; ;Main.c: 283:         LATCbits.LATC1 = 1;
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"284
+[; ;Main.c: 284:         if((colour & 0b10000000) == 0)
+[e $ ! == & -> _colour `i -> 128 `i -> 0 `i 371  ]
 "285
-[; ;Main.c: 285:         if((colour & 0b10000000) == 0)
-[e $ ! == & -> _colour `i -> 128 `i -> 0 `i 374  ]
-"286
-[; ;Main.c: 286:         {
+[; ;Main.c: 285:         {
 {
+"286
+[; ;Main.c: 286:             LATCbits.LATC1 = 0;
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 "287
-[; ;Main.c: 287:             LATCbits.LATC1 = 0;
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"288
-[; ;Main.c: 288:         }
+[; ;Main.c: 287:         }
 }
-[e :U 374 ]
-"289
-[; ;Main.c: 289:         __nop();
+[e :U 371 ]
+"288
+[; ;Main.c: 288:         __nop();
 [e ( ___nop ..  ]
-"290
-[; ;Main.c: 290:         LATCbits.LATC1 = 0;
+"289
+[; ;Main.c: 289:         LATCbits.LATC1 = 0;
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"291
-[; ;Main.c: 291:         colour = colour << 1;
+"290
+[; ;Main.c: 290:         colour = colour << 1;
 [e = _colour -> << -> _colour `i -> 1 `i `uc ]
-"292
-[; ;Main.c: 292:     }
+"291
+[; ;Main.c: 291:     }
 }
 [e -- _bits -> -> 1 `i `uc ]
-[e $ != -> _bits `i -> 0 `i 371  ]
-[e :U 372 ]
+[e $ != -> _bits `i -> 0 `i 368  ]
+[e :U 369 ]
 }
-"293
-[; ;Main.c: 293: }
-[e :UE 370 ]
+"292
+[; ;Main.c: 292: }
+[e :UE 367 ]
 }
