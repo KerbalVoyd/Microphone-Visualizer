@@ -4622,20 +4622,18 @@ int main(void)
 
 
                     neopixel_fill_a(30, redArray, greenArray, blueArray);
-                    _delay((unsigned long)((5)*(48000000/4000.0)));
             prevNum = i;
 
         }
-
+            _delay((unsigned long)((100)*(48000000/4000.0)));
         } else {
             for (int i = 0; i <= 30; i++) {
             redArray[i] = 0;
-            neopixel_fill_a(30, redArray, greenArray, blueArray);
-            _delay((unsigned long)((1)*(48000000/4000.0)));
             }
+            neopixel_fill_a(30, redArray, greenArray, blueArray);
 
         }
-# 252 "Main.c"
+# 250 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");
@@ -4653,7 +4651,7 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
         neopixel_send(blue[ledNum]);
     }
 }
-# 279 "Main.c"
+# 277 "Main.c"
 void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)

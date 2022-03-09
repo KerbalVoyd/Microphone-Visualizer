@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/free/production\UBMP4-Intro-1-Input-Output.X.production.sym \
   --cmf=dist/free/production\UBMP4-Intro-1-Input-Output.X.production.cmf -z \
-  -Q16F1459 -oC:\Users\POCRM9~1\AppData\Local\Temp\xcAs8ak.4 \
+  -Q16F1459 -oC:\Users\POCRM9~1\AppData\Local\Temp\xcAs9vo.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/free/production/UBMP4-Intro-1-Input-Output.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=020BFh-023EFh -pstack=STACK \
@@ -32,7 +32,7 @@ Linker command line:
   -AIDLOC=08000h-08003h -DIDLOC=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=0800h,intentry,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\POCRM9~1\AppData\Local\Temp\xcAs8ak.o \
+  C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9vo.o \
   dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o 
 
 Object code version is 3.11
@@ -42,28 +42,28 @@ Machine type is 16F1459
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\POCRM9~1\AppData\Local\Temp\xcAs8ak.o
+C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9vo.o
                 end_init                            804      804        2     1000       0
                 init                                803      803        1     1000       0
                 reset_vec                           800      800        3     1000       0
 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
                 cinit                               FD5      FD5       2B     1FAA       0
-                text7                               E9E      E9E        E     1D3C       0
-                text6                               E80      E80        8     1D00       0
-                text5                               E88      E88        A     1D10       0
-                text4                               E92      E92        C     1D24       0
-                text3                               EC7      EC7       20     1D8E       0
-                text2                               EAC      EAC       1B     1D58       0
-                text1                               EE7      EE7       34     1DCE       0
-                maintext                            F1B      F1B       BA     1E36       0
+                text7                               EA3      EA3        E     1D46       0
+                text6                               E85      E85        8     1D0A       0
+                text5                               E8D      E8D        A     1D1A       0
+                text4                               E97      E97        C     1D2E       0
+                text3                               ECC      ECC       20     1D98       0
+                text2                               EB1      EB1       1B     1D62       0
+                text1                               EEC      EEC       34     1DD8       0
+                maintext                            F20      F20       B5     1E40       0
                 cstackBANK0                          65       65        4       20       1
                 cstackCOMMON                         70       70        E       70       1
-                clrtext                             E7A      E7A        6     1CF4       0
+                clrtext                             E7F      E7F        6     1CFE       0
                 bssBANK2                            120      120       1F      120       1
                 bssBANK1                             A0       A0       48       A0       1
                 dataBANK0                            61       61        4       20       1
                 bssBANK0                             20       20       41       20       1
-                idataBANK0                          E76      E76        4     1CEC       0
+                idataBANK0                          E7B      E7B        4     1CF6       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -73,16 +73,16 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                               FD5      FD5       2B         0
                 init                                803      803        1         0
                 reset_vec                           800      800        3         0
-                text7                               E9E      E9E        E         0
-                text6                               E80      E80        8         0
-                text5                               E88      E88        A         0
-                text4                               E92      E92        C         0
-                text3                               EC7      EC7       20         0
-                text2                               EAC      EAC       1B         0
-                text1                               EE7      EE7       34         0
-                maintext                            F1B      F1B       BA         0
-                clrtext                             E7A      E7A        6         0
-                idataBANK0                          E76      E76        4         0
+                text7                               EA3      EA3        E         0
+                text6                               E85      E85        8         0
+                text5                               E8D      E8D        A         0
+                text4                               E97      E97        C         0
+                text3                               ECC      ECC       20         0
+                text2                               EB1      EB1       1B         0
+                text1                               EEC      EEC       34         0
+                maintext                            F20      F20       B5         0
+                clrtext                             E7F      E7F        6         0
+                idataBANK0                          E7B      E7B        4         0
 
         CLASS   STRCODE        
 
@@ -250,16 +250,16 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 bssBANK1                       0000A0  000048  0000E8        A0       1  BANK1       1
                 bssBANK2                       000120  00001F  00013F       120       1  BANK2       1
                 reset_vec                      000800  000006  000806      1000       0  CODE        2
-                idataBANK0                     000E76  000004  000E7A      1CEC       0  CODE        2
-                clrtext                        000E7A  000006  000E80      1CF4       0  CODE        2
-                text6                          000E80  000008  000E88      1D00       0  CODE        2
-                text5                          000E88  00000A  000E92      1D10       0  CODE        2
-                text4                          000E92  00000C  000E9E      1D24       0  CODE        2
-                text7                          000E9E  00000E  000EAC      1D3C       0  CODE        2
-                text2                          000EAC  00001B  000EC7      1D58       0  CODE        2
-                text3                          000EC7  000020  000EE7      1D8E       0  CODE        2
-                text1                          000EE7  000034  000F1B      1DCE       0  CODE        2
-                maintext                       000F1B  0000BA  000FD5      1E36       0  CODE        2
+                idataBANK0                     000E7B  000004  000E7F      1CF6       0  CODE        2
+                clrtext                        000E7F  000006  000E85      1CFE       0  CODE        2
+                text6                          000E85  000008  000E8D      1D0A       0  CODE        2
+                text5                          000E8D  00000A  000E97      1D1A       0  CODE        2
+                text4                          000E97  00000C  000EA3      1D2E       0  CODE        2
+                text7                          000EA3  00000E  000EB1      1D46       0  CODE        2
+                text2                          000EB1  00001B  000ECC      1D62       0  CODE        2
+                text3                          000ECC  000020  000EEC      1D98       0  CODE        2
+                text1                          000EEC  000034  000F20      1DD8       0  CODE        2
+                maintext                       000F20  0000B5  000FD5      1E40       0  CODE        2
                 cinit                          000FD5  00002B  001000      1FAA       0  CODE        2
 
 
@@ -280,12 +280,12 @@ UNUSED ADDRESS RANGES
         BANK8            0420-046F             50           1
         BANK9            04A0-04EF             50           1
         BIGRAM           2000-23EF            3F0           1
-        CODE             0806-0E75            670           2
+        CODE             0806-0E7A            675           2
                          1000-1FFF            800
         CONFIG           8007-8008              2           2
-        CONST            0806-0E75            100           2
+        CONST            0806-0E7A            100           2
                          1000-1FFF            100
-        ENTRY            0806-0E75            100           2
+        ENTRY            0806-0E7A            100           2
                          1000-1FFF            100
         IDLOC            8000-8003              4           2
         RAM              0069-006F              7           1
@@ -334,9 +334,9 @@ UNUSED ADDRESS RANGES
         SFR8             0400-041F             20           1
         SFR9             0480-049F             20           1
         STACK            20BF-23EF            331           1
-        STRCODE          0806-0E75            670           2
+        STRCODE          0806-0E7A            675           2
                          1000-1FFF           1000
-        STRING           0806-0E75            100           2
+        STRING           0806-0E7A            100           2
                          1000-1FFF            100
 
                                   Symbol Table
@@ -346,9 +346,9 @@ _ACTCON                      (abs)        039B
 _ADCON0                      (abs)        009D
 _ADCON1                      (abs)        009E
 _ADCON2                      (abs)        009F
-_ADC_config                  text7        0E9E
-_ADC_read                    text6        0E80
-_ADC_select_channel          text5        0E88
+_ADC_config                  text7        0EA3
+_ADC_read                    text6        0E85
+_ADC_select_channel          text5        0E8D
 _ADON                        (abs)        04E8
 _ADRESH                      (abs)        009C
 _ANSELA                      (abs)        018C
@@ -361,14 +361,14 @@ _LATC                        (abs)        010E
 _LATCbits                    (abs)        010E
 _OPTION_REG                  (abs)        0095
 _OSCCON                      (abs)        0099
-_OSC_config                  text4        0E92
+_OSC_config                  text4        0E97
 _PLLRDY                      (abs)        04D6
 _PORTAbits                   (abs)        000C
 _TRISA                       (abs)        008C
 _TRISB                       (abs)        008D
 _TRISC                       (abs)        008E
 _TRISCbits                   (abs)        008E
-_UBMP4_config                text3        0EC7
+_UBMP4_config                text3        0ECC
 _WPUA                        (abs)        020C
 _WPUB                        (abs)        020D
 __Habs1                      abs1         0000
@@ -565,15 +565,15 @@ ___latbits                   (abs)        0002
 ___sp                        stack        0000
 ___stackhi                   (abs)        23EF
 ___stacklo                   (abs)        20BF
-__end_of_ADC_config          text7        0EAC
-__end_of_ADC_read            text6        0E88
-__end_of_ADC_select_channel  text5        0E92
-__end_of_OSC_config          text4        0E9E
-__end_of_UBMP4_config        text3        0EE7
+__end_of_ADC_config          text7        0EB1
+__end_of_ADC_read            text6        0E8D
+__end_of_ADC_select_channel  text5        0E97
+__end_of_OSC_config          text4        0EA3
+__end_of_UBMP4_config        text3        0EEC
 __end_of__initialization     cinit        0FFD
 __end_of_main                maintext     0FD5
-__end_of_neopixel_fill_a     text1        0F1B
-__end_of_neopixel_send       text2        0EC7
+__end_of_neopixel_fill_a     text1        0F20
+__end_of_neopixel_send       text2        0ECC
 __initialization             cinit        0FD5
 __pbssBANK0                  bssBANK0     0020
 __pbssBANK1                  bssBANK1     00A0
@@ -581,15 +581,15 @@ __pbssBANK2                  bssBANK2     0120
 __pcstackBANK0               cstackBANK0  0065
 __pcstackCOMMON              cstackCOMMON 0070
 __pdataBANK0                 dataBANK0    0061
-__pidataBANK0                idataBANK0   0E76
-__pmaintext                  maintext     0F1B
-__ptext1                     text1        0EE7
-__ptext2                     text2        0EAC
-__ptext3                     text3        0EC7
-__ptext4                     text4        0E92
-__ptext5                     text5        0E88
-__ptext6                     text6        0E80
-__ptext7                     text7        0E9E
+__pidataBANK0                idataBANK0   0E7B
+__pmaintext                  maintext     0F20
+__ptext1                     text1        0EEC
+__ptext2                     text2        0EB1
+__ptext3                     text3        0ECC
+__ptext4                     text4        0E97
+__ptext5                     text5        0E8D
+__ptext6                     text6        0E85
+__ptext7                     text7        0EA3
 __size_of_ADC_config         (abs)        0000
 __size_of_ADC_read           (abs)        0000
 __size_of_ADC_select_channel (abs)        0000
@@ -604,9 +604,9 @@ _blueS                       bssBANK0     0043
 _greenArray                  bssBANK1     00AA
 _greenS                      bssBANK0     004D
 _ledNum                      dataBANK0    0063
-_main                        maintext     0F1B
-_neopixel_fill_a             text1        0EE7
-_neopixel_send               text2        0EAC
+_main                        maintext     0F20
+_neopixel_fill_a             text1        0EEC
+_neopixel_send               text2        0EB1
 _redArray                    bssBANK1     00C9
 _redS                        bssBANK0     0057
 _rev                         bssBANK0     003C
@@ -614,7 +614,7 @@ _sound                       bssBANK0     0034
 _tick                        dataBANK0    0061
 _ticks_left                  bssBANK0     003A
 btemp                        (abs)        007E
-clear_ram0                   clrtext      0E7A
+clear_ram0                   clrtext      0E7F
 end_of_initialization        cinit        0FFD
 intlevel0                    functab      0000
 intlevel1                    functab      0000
@@ -641,20 +641,20 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 UBMP4.c
-		_ADC_config    		CODE           	0E9E	0000	14
-		_ADC_read      		CODE           	0E80	0000	8
-		_UBMP4_config  		CODE           	0EC7	0000	32
-		_OSC_config    		CODE           	0E92	0000	12
-		_ADC_select_channel		CODE           	0E88	0000	10
+		_ADC_config    		CODE           	0EA3	0000	14
+		_ADC_read      		CODE           	0E85	0000	8
+		_UBMP4_config  		CODE           	0ECC	0000	32
+		_OSC_config    		CODE           	0E97	0000	12
+		_ADC_select_channel		CODE           	0E8D	0000	10
 
 UBMP4.c estimated size: 76
 
 Main.c
-		_neopixel_fill_a		CODE           	0EE7	0000	52
-		_main          		CODE           	0F1B	0000	186
-		_neopixel_send 		CODE           	0EAC	0000	27
+		_neopixel_fill_a		CODE           	0EEC	0000	52
+		_main          		CODE           	0F20	0000	181
+		_neopixel_send 		CODE           	0EB1	0000	27
 
-Main.c estimated size: 265
+Main.c estimated size: 260
 
 shared
 		__initialization		CODE           	0FD5	0000	40

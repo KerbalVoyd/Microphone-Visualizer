@@ -179,17 +179,15 @@ int main(void)
                    //redArray[prevNum]-=speed;
 
                     neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-                    __delay_ms(5);
             prevNum = i;
             
         }
-            
+            __delay_ms(100);
         } else {
             for (int i = 0; i <= 30; i++) {
             redArray[i] = 0;
-            neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-            __delay_ms(1);
             }
+            neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
             
         }
 
