@@ -150,8 +150,8 @@ void pulsingRGB() {
 }
 
 unsigned int amplitude;
-unsigned int soundMemory;
 unsigned int sound;
+unsigned int soundMemory = 0;
 int main(void)
 {
     // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -163,7 +163,8 @@ int main(void)
     // Code in this while loop runs repeatedly.
     int led = 5;
     int brightness = 255;
-    while(1)
+    
+    while(true) 
 	{
 
         sound = ADC_read();
@@ -172,22 +173,31 @@ int main(void)
         }
         int prevNum = 0;
         if (sound > 140 || sound < 110){
-            
-            for (int i = 0; i <= amplitude/4; i++) {
+            if (amplitude > soundMemory) {
+                
+                for (int i = 0; i <= amplitude/4; i++) {
 
-                    redArray[i]+=128;
-                   //redArray[prevNum]-=speed;
+                        redArray[i] = 128;
 
+                        neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+                __delay_ms(1);
+                }
+            } else if (amplitude < soundMemory){
+                for (int i = soundMemory; i >= amplitude/4; i--) {
+                    redArray[i] = 0;
                     neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-            prevNum = i;
-            
-        }
-            __delay_ms(100);
-        } else {
-            for (int i = 0; i <= 30; i++) {
-            redArray[i] = 0;
+                    __delay_ms(1);
+                }
+            } else {
+            soundMemory = amplitude;
             }
-            neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+            soundMemory = amplitude;
+        } else {
+//            for (int i = 0; i <= 30; i++) {
+//            redArray[i] = 0;
+//            }
+//            neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
+            soundMemory = amplitude;
             
         }
 

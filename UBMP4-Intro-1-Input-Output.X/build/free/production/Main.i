@@ -4593,8 +4593,8 @@ void pulsingRGB() {
 }
 
 unsigned int amplitude;
-unsigned int soundMemory;
 unsigned int sound;
+unsigned int soundMemory = 0;
 int main(void)
 {
 
@@ -4606,6 +4606,7 @@ int main(void)
 
     int led = 5;
     int brightness = 255;
+
     while(1)
  {
 
@@ -4615,25 +4616,34 @@ int main(void)
         }
         int prevNum = 0;
         if (sound > 140 || sound < 110){
+            if (amplitude > soundMemory) {
 
-            for (int i = 0; i <= amplitude/4; i++) {
+                for (int i = 0; i <= amplitude/4; i++) {
 
-                    redArray[i]+=128;
+                        redArray[i] = 128;
 
-
+                        neopixel_fill_a(30, redArray, greenArray, blueArray);
+                _delay((unsigned long)((1)*(48000000/4000.0)));
+                }
+            } else if (amplitude < soundMemory){
+                for (int i = soundMemory; i >= amplitude/4; i--) {
+                    redArray[i] = 0;
                     neopixel_fill_a(30, redArray, greenArray, blueArray);
-            prevNum = i;
-
-        }
-            _delay((unsigned long)((100)*(48000000/4000.0)));
-        } else {
-            for (int i = 0; i <= 30; i++) {
-            redArray[i] = 0;
+                    _delay((unsigned long)((1)*(48000000/4000.0)));
+                }
+            } else {
+            soundMemory = amplitude;
             }
-            neopixel_fill_a(30, redArray, greenArray, blueArray);
+            soundMemory = amplitude;
+        } else {
+
+
+
+
+            soundMemory = amplitude;
 
         }
-# 250 "Main.c"
+# 260 "Main.c"
         if(PORTAbits.RA3 == 0)
         {
             __asm("reset");
@@ -4651,7 +4661,7 @@ void neopixel_fill_a(unsigned char leds, unsigned char red[], unsigned char gree
         neopixel_send(blue[ledNum]);
     }
 }
-# 277 "Main.c"
+# 287 "Main.c"
 void neopixel_send(unsigned char colour)
 {
     for(unsigned char bits = 8; bits != 0; bits --)

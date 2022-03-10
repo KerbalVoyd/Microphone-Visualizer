@@ -15,9 +15,9 @@
 [v _hsvToRGB hsvToRGB `(v  1 e 1 0 ]
 "155
 [v _main main `(i  1 e 2 0 ]
-"259
+"269
 [v _neopixel_fill_a neopixel_fill_a `(v  1 e 1 0 ]
-"277
+"287
 [v _neopixel_send neopixel_send `(v  1 e 1 0 ]
 "21 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
@@ -125,42 +125,44 @@
 [v _rev rev `a  1 e 1 0 ]
 "152
 [v _amplitude amplitude `ui  1 e 2 0 ]
-"154
+"153
 [v _sound sound `ui  1 e 2 0 ]
+"154
+[v _soundMemory soundMemory `ui  1 e 2 0 ]
 "155
 [v _main main `(i  1 e 2 0 ]
 {
-"187
+"186
 [v main@i_203 i `i  1 a 2 2 ]
-"176
+"178
 [v main@i i `i  1 a 2 0 ]
-"257
+"267
 } 0
-"259
+"269
 [v _neopixel_fill_a neopixel_fill_a `(v  1 e 1 0 ]
 {
 [v neopixel_fill_a@leds leds `uc  1 a 1 wreg ]
-"260
+"270
 [v neopixel_fill_a@ledNum ledNum `i  1 a 2 10 ]
-"259
+"269
 [v neopixel_fill_a@leds leds `uc  1 a 1 wreg ]
 [v neopixel_fill_a@red red `*.4uc  1 p 1 3 ]
 [v neopixel_fill_a@green green `*.4uc  1 p 1 4 ]
 [v neopixel_fill_a@blue blue `*.39uc  1 p 2 5 ]
 [v neopixel_fill_a@leds leds `uc  1 a 1 9 ]
-"266
+"276
 } 0
-"277
+"287
 [v _neopixel_send neopixel_send `(v  1 e 1 0 ]
 {
 [v neopixel_send@colour colour `uc  1 a 1 wreg ]
-"279
+"289
 [v neopixel_send@bits bits `uc  1 a 1 2 ]
-"277
+"287
 [v neopixel_send@colour colour `uc  1 a 1 wreg ]
-"279
+"289
 [v neopixel_send@colour colour `uc  1 a 1 1 ]
-"290
+"300
 } 0
 "29 C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
 [v _UBMP4_config UBMP4_config `(v  1 e 1 0 ]
