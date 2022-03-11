@@ -180,13 +180,13 @@ int main(void)
                         redArray[i] = 128;
 
                         neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-                __delay_ms(1);
+                __delay_us(100);
                 }
             } else if (amplitude < soundMemory){
                 for (int i = soundMemory; i >= amplitude/4; i--) {
                     redArray[i] = 0;
                     neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
-                    __delay_ms(1);
+                    __delay_us(100);
                 }
             } else {
             soundMemory = amplitude;

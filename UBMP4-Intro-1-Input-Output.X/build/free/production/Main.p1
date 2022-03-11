@@ -937,8 +937,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 182:                         neopixel_fill_a(30, redArray, greenArray, blueArray);
 [e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
 "183
-[; ;Main.c: 183:                 _delay((unsigned long)((1)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+[; ;Main.c: 183:                 _delay((unsigned long)((100)*(48000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
 "184
 [; ;Main.c: 184:                 }
 }
@@ -969,8 +969,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 188:                     neopixel_fill_a(30, redArray, greenArray, blueArray);
 [e ( _neopixel_fill_a (4 , , , -> -> 30 `i `uc &U _redArray &U _greenArray &U _blueArray ]
 "189
-[; ;Main.c: 189:                     _delay((unsigned long)((1)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+[; ;Main.c: 189:                     _delay((unsigned long)((100)*(48000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
 "190
 [; ;Main.c: 190:                 }
 }

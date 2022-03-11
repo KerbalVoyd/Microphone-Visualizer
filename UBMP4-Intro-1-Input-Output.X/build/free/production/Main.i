@@ -4623,13 +4623,13 @@ int main(void)
                         redArray[i] = 128;
 
                         neopixel_fill_a(30, redArray, greenArray, blueArray);
-                _delay((unsigned long)((1)*(48000000/4000.0)));
+                _delay((unsigned long)((100)*(48000000/4000000.0)));
                 }
             } else if (amplitude < soundMemory){
                 for (int i = soundMemory; i >= amplitude/4; i--) {
                     redArray[i] = 0;
                     neopixel_fill_a(30, redArray, greenArray, blueArray);
-                    _delay((unsigned long)((1)*(48000000/4000.0)));
+                    _delay((unsigned long)((100)*(48000000/4000000.0)));
                 }
             } else {
             soundMemory = amplitude;
