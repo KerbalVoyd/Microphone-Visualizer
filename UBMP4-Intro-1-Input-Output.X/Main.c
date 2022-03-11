@@ -163,21 +163,29 @@ int main(void)
     // Code in this while loop runs repeatedly.
     int led = 5;
     int brightness = 255;
-    
+    int blueColour = 0;
     while(true) 
 	{
-
-        sound = ADC_read();
+/* ================================================================
+   IMPORTANT: NEO PIXELS RECEIVE SIGNAL FOR .5 MICRO SECONDS AND 
+   NO SIGNAL FOR 1.5 MICRO SECONDS. TAKES 2 MICRO SECONDS PER CYCLE
+ remember 325 hZ
+   ================================================================*/
+        sound = ADC_read(); 
         if (sound > 128) {
         amplitude = sound - centerPoint;
         }
         int prevNum = 0;
+        if (H2OUT == 1) {
+            
+        }
         if (sound > 140 || sound < 110){
             if (amplitude > soundMemory) {
                 
                 for (int i = 0; i <= amplitude/4; i++) {
 
                         redArray[i] = 128;
+                        blueArray[i] = blueColour;
 
                         neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
                 __delay_us(100);
@@ -185,6 +193,7 @@ int main(void)
             } else if (amplitude < soundMemory){
                 for (int i = soundMemory; i >= amplitude/4; i--) {
                     redArray[i] = 0;
+                    blueArray[i] = 0;
                     neopixel_fill_a(pixelLength, redArray, greenArray, blueArray);
                     __delay_us(100);
                 }

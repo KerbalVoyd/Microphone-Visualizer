@@ -13,23 +13,23 @@
 %PSECTS
 $dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 cinit CODE 0 FD5 FD5 2B 2
-text1 CODE 0 ECC ECC 34 2
-text2 CODE 0 E91 E91 1B 2
-text3 CODE 0 EAC EAC 20 2
-text4 CODE 0 E77 E77 C 2
-text5 CODE 0 E6D E6D A 2
-text6 CODE 0 E65 E65 8 2
-text7 CODE 0 E83 E83 E 2
-maintext CODE 0 F00 F00 D5 2
+text1 CODE 0 EB9 EB9 34 2
+text2 CODE 0 E7E E7E 1B 2
+text3 CODE 0 E99 E99 20 2
+text4 CODE 0 E64 E64 C 2
+text5 CODE 0 E5A E5A A 2
+text6 CODE 0 E52 E52 8 2
+text7 CODE 0 E70 E70 E 2
+maintext CODE 0 EED EED E8 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 65 65 4 1
+cstackBANK0 BANK0 1 61 61 6 1
 bssBANK0 BANK0 1 20 20 41 1
 bssBANK1 BANK1 1 A0 A0 48 1
 bssBANK2 BANK2 1 120 120 1F 1
-idataBANK0 CODE 0 E5B E5B 4 2
-dataBANK0 BANK0 1 61 61 4 1
-clrtext CODE 0 E5F E5F 6 2
-$C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
+idataBANK0 CODE 0 E48 E48 4 2
+dataBANK0 BANK0 1 67 67 4 1
+clrtext CODE 0 E4C E4C 6 2
+$C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
 init CODE 0 803 803 1 2
 reset_vec CODE 0 800 800 3 2
 end_init CODE 0 804 804 2 2
@@ -39,7 +39,7 @@ end_init CODE 0 804 804 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 69-6F 1
+RAM 6B-6F 1
 RAM E8-EF 1
 RAM 13F-16F 1
 RAM 1A0-1EF 1
@@ -52,7 +52,7 @@ RAM 4A0-4EF 1
 RAM 520-56F 1
 RAM 5A0-5EF 1
 RAM 620-64F 1
-BANK0 69-6F 1
+BANK0 6B-6F 1
 BANK1 E8-EF 1
 BANK2 13F-16F 1
 BANK3 1A0-1EF 1
@@ -62,9 +62,9 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 806-E5A 2
+CONST 806-E47 2
 CONST 1000-1FFF 2
-ENTRY 806-E5A 2
+ENTRY 806-E47 2
 ENTRY 1000-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -90,7 +90,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 20BF-23EF 1
-CODE 806-E5A 2
+CODE 806-E47 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -107,9 +107,9 @@ BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 CONFIG 8007-8008 2
-STRCODE 806-E5A 2
+STRCODE 806-E47 2
 STRCODE 1000-1FFF 2
-STRING 806-E5A 2
+STRING 806-E47 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -125,148 +125,152 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-FD5 cinit CODE >768:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FD5 cinit CODE >771:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FD5 cinit CODE >866:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FD8 cinit CODE >867:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FD9 cinit CODE >868:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FDC cinit CODE >869:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FDD cinit CODE >870:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE0 cinit CODE >871:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE1 cinit CODE >872:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE4 cinit CODE >873:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE5 cinit CODE >890:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE6 cinit CODE >891:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE7 cinit CODE >892:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE8 cinit CODE >893:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FE9 cinit CODE >894:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FEA cinit CODE >895:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FED cinit CODE >899:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FEE cinit CODE >900:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FEF cinit CODE >901:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF0 cinit CODE >902:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF1 cinit CODE >903:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF2 cinit CODE >904:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF5 cinit CODE >908:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF6 cinit CODE >909:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF7 cinit CODE >910:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF8 cinit CODE >911:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FF9 cinit CODE >912:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FFA cinit CODE >913:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FFD cinit CODE >919:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FFD cinit CODE >921:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-FFE cinit CODE >922:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E83 text7 CODE >51:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E83 text7 CODE >53:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E85 text7 CODE >55:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E87 text7 CODE >56:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E8A text7 CODE >58:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E8D text7 CODE >59:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E8F text7 CODE >60:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E90 text7 CODE >61:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E65 text6 CODE >73:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E65 text6 CODE >75:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E67 text6 CODE >76:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E67 text6 CODE >77:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E6B text6 CODE >78:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E6C text6 CODE >79:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E6D text5 CODE >65:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E6E text5 CODE >67:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E70 text5 CODE >68:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E73 text5 CODE >69:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E76 text5 CODE >70:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E77 text4 CODE >21:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E77 text4 CODE >23:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E7A text4 CODE >24:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E7D text4 CODE >25:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E82 text4 CODE >26:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EAC text3 CODE >29:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EAC text3 CODE >31:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EAF text3 CODE >33:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EB1 text3 CODE >34:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EB4 text3 CODE >35:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EB6 text3 CODE >36:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EB9 text3 CODE >38:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EBB text3 CODE >39:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EBE text3 CODE >40:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EC0 text3 CODE >41:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EC3 text3 CODE >43:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EC5 text3 CODE >44:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-EC8 text3 CODE >45:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-ECB text3 CODE >48:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
-E91 text2 CODE >287:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E92 text2 CODE >289:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E96 text2 CODE >291:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E98 text2 CODE >292:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E9C text2 CODE >294:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E9D text2 CODE >295:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E9D text2 CODE >296:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E9E text2 CODE >297:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EA0 text2 CODE >298:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EA4 text2 CODE >299:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EAB text2 CODE >300:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-ECC text1 CODE >269:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-ECD text1 CODE >270:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-ECF text1 CODE >271:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-ED0 text1 CODE >272:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EDA text1 CODE >273:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EE4 text1 CODE >274:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EEE text1 CODE >275:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EF7 text1 CODE >275:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EFB text1 CODE >275:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-EFF text1 CODE >276:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F00 maintext CODE >155:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F00 maintext CODE >158:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F03 maintext CODE >159:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F06 maintext CODE >160:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F09 maintext CODE >161:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F0D maintext CODE >162:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F19 maintext CODE >164:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F19 maintext CODE >165:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F19 maintext CODE >170:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F23 maintext CODE >171:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F26 maintext CODE >171:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F28 maintext CODE >171:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F2C maintext CODE >172:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F32 maintext CODE >174:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F32 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F35 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F37 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F3E maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F40 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F44 maintext CODE >176:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F46 maintext CODE >176:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F4A maintext CODE >176:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F4E maintext CODE >178:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F51 maintext CODE >180:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F59 maintext CODE >182:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F69 maintext CODE >183:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F6D maintext CODE >184:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F7C maintext CODE >184:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F80 maintext CODE >184:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F85 maintext CODE >185:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F87 maintext CODE >185:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F8B maintext CODE >185:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F8F maintext CODE >186:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F94 maintext CODE >187:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-F99 maintext CODE >188:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FA9 maintext CODE >189:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FAD maintext CODE >190:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FBC maintext CODE >190:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FC0 maintext CODE >190:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FC5 maintext CODE >192:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FC9 maintext CODE >193:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FC9 maintext CODE >194:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FCD maintext CODE >260:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-FD1 maintext CODE >262:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
-E5F clrtext CODE >879:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E5F clrtext CODE >880:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E60 clrtext CODE >881:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E60 clrtext CODE >882:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E61 clrtext CODE >883:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E62 clrtext CODE >884:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E63 clrtext CODE >885:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
-E64 clrtext CODE >886:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.s
+FD5 cinit CODE >768:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FD5 cinit CODE >771:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FD5 cinit CODE >866:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FD8 cinit CODE >867:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FD9 cinit CODE >868:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FDC cinit CODE >869:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FDD cinit CODE >870:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE0 cinit CODE >871:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE1 cinit CODE >872:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE4 cinit CODE >873:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE5 cinit CODE >890:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE6 cinit CODE >891:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE7 cinit CODE >892:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE8 cinit CODE >893:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FE9 cinit CODE >894:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FEA cinit CODE >895:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FED cinit CODE >899:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FEE cinit CODE >900:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FEF cinit CODE >901:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF0 cinit CODE >902:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF1 cinit CODE >903:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF2 cinit CODE >904:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF5 cinit CODE >908:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF6 cinit CODE >909:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF7 cinit CODE >910:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF8 cinit CODE >911:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FF9 cinit CODE >912:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FFA cinit CODE >913:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FFD cinit CODE >919:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FFD cinit CODE >921:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+FFE cinit CODE >922:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E70 text7 CODE >51:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E70 text7 CODE >53:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E72 text7 CODE >55:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E74 text7 CODE >56:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E77 text7 CODE >58:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E7A text7 CODE >59:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E7C text7 CODE >60:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E7D text7 CODE >61:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E52 text6 CODE >73:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E52 text6 CODE >75:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E54 text6 CODE >76:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E54 text6 CODE >77:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E58 text6 CODE >78:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E59 text6 CODE >79:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E5A text5 CODE >65:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E5B text5 CODE >67:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E5D text5 CODE >68:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E60 text5 CODE >69:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E63 text5 CODE >70:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E64 text4 CODE >21:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E64 text4 CODE >23:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E67 text4 CODE >24:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E6A text4 CODE >25:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E6F text4 CODE >26:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E99 text3 CODE >29:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E99 text3 CODE >31:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E9C text3 CODE >33:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E9E text3 CODE >34:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EA1 text3 CODE >35:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EA3 text3 CODE >36:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EA6 text3 CODE >38:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EA8 text3 CODE >39:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EAB text3 CODE >40:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EAD text3 CODE >41:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EB0 text3 CODE >43:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EB2 text3 CODE >44:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EB5 text3 CODE >45:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+EB8 text3 CODE >48:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\UBMP4.c
+E7E text2 CODE >296:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E7F text2 CODE >298:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E83 text2 CODE >300:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E85 text2 CODE >301:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E89 text2 CODE >303:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E8A text2 CODE >304:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E8A text2 CODE >305:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E8B text2 CODE >306:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E8D text2 CODE >307:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E91 text2 CODE >308:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E98 text2 CODE >309:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EB9 text1 CODE >278:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EBA text1 CODE >279:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EBC text1 CODE >280:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EBD text1 CODE >281:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EC7 text1 CODE >282:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+ED1 text1 CODE >283:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EDB text1 CODE >284:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EE4 text1 CODE >284:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EE8 text1 CODE >284:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EEC text1 CODE >285:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EED maintext CODE >155:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EED maintext CODE >158:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EF0 maintext CODE >159:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EF3 maintext CODE >160:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EF6 maintext CODE >161:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+EFA maintext CODE >162:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F06 maintext CODE >164:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F06 maintext CODE >165:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F06 maintext CODE >166:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F09 maintext CODE >174:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F13 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F16 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F18 maintext CODE >175:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F1C maintext CODE >176:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F22 maintext CODE >178:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F22 maintext CODE >179:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F24 maintext CODE >182:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F28 maintext CODE >182:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F2A maintext CODE >182:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F31 maintext CODE >182:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F33 maintext CODE >182:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F37 maintext CODE >183:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F39 maintext CODE >183:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F3D maintext CODE >183:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F41 maintext CODE >185:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F44 maintext CODE >187:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F4C maintext CODE >188:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F54 maintext CODE >190:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F64 maintext CODE >191:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F68 maintext CODE >192:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F77 maintext CODE >192:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F7B maintext CODE >192:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F80 maintext CODE >193:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F82 maintext CODE >193:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F86 maintext CODE >193:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F8A maintext CODE >194:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F8F maintext CODE >195:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F94 maintext CODE >196:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+F99 maintext CODE >197:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FA9 maintext CODE >198:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FAD maintext CODE >199:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FBC maintext CODE >199:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FC0 maintext CODE >199:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FC5 maintext CODE >201:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FC9 maintext CODE >202:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FC9 maintext CODE >203:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FCD maintext CODE >269:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+FD1 maintext CODE >271:C:\Users\pocrm9060\OneDrive - Waterloo Region District School Board\Documents\GitHub\Microphone-Visualizer\UBMP4-Intro-1-Input-Output.X\Main.c
+E4C clrtext CODE >879:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E4C clrtext CODE >880:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E4D clrtext CODE >881:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E4D clrtext CODE >882:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E4E clrtext CODE >883:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E4F clrtext CODE >884:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E50 clrtext CODE >885:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
+E51 clrtext CODE >886:C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -287,9 +291,9 @@ __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_ADC_select_channel 1CDA 0 CODE 0 text5 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_ADC_select_channel 1CB4 0 CODE 0 text5 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _GO 4E9 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-main@i 65 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+main@i 63 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _ADON 4E8 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _LATA 10C 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
@@ -297,30 +301,31 @@ _LATB 10D 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production
 _LATC 10E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _WPUA 20C 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _WPUB 20D 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-_main 1E00 0 CODE 0 maintext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+_main 1DDA 0 CODE 0 maintext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _redS 57 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-_tick 61 0 BANK0 1 dataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_tick 67 0 BANK0 1 dataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 btemp 7E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-start 1006 0 CODE 0 init C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
+start 1006 0 CODE 0 init C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
 __size_of_main 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-_blueArray 120 0 BANK2 1 bssBANK2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_blueArray AA 0 BANK1 1 bssBANK1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_read 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _amplitude 38 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
 wtemp0 7E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __size_of_neopixel_send 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 ADC_select_channel@channel 70 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __size_of_ADC_config 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
+main@blueColour 61 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _ACTCON 39B 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _ADCON0 9D 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _ADCON1 9E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
@@ -331,26 +336,26 @@ _ANSELB 18D 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.producti
 _ANSELC 18E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __size_of_OSC_config 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 neopixel_send@colour 71 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_neopixel_send 1D58 0 CODE 0 text2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__end_of_neopixel_send 1D32 0 CODE 0 text2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_ADC_read 1CCA 0 CODE 0 text6 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_neopixel_fill_a 1E00 0 CODE 0 text1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-neopixel_fill_a@blue 75 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_ADC_read 1CA4 0 CODE 0 text6 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__end_of_neopixel_fill_a 1DDA 0 CODE 0 text1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+neopixel_fill_a@blue 76 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 neopixel_fill_a@leds 79 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _OPTION_REG 95 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_ADC_read 1CDA 0 CODE 0 text6 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
-___stacklo 20BF 0 ABS 0 - C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
+__end_of_ADC_read 1CB4 0 CODE 0 text6 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+___stackhi 23EF 0 ABS 0 - C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
+___stacklo 20BF 0 ABS 0 - C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
 neopixel_fill_a@ledNum 7A 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 start_initialization 1FAA 0 CODE 0 cinit dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _OSCCON 99 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _PLLRDY 4D6 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _TRISCbits 8E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-clear_ram0 1CBE 0 CODE 0 clrtext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__pcstackBANK0 65 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-_neopixel_fill_a 1D98 0 CODE 0 text1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+clear_ram0 1C98 0 CODE 0 clrtext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__pcstackBANK0 61 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_neopixel_fill_a 1D72 0 CODE 0 text1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __size_of_ADC_select_channel 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
+___int_sp 0 0 STACK 2 stack C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -480,16 +485,16 @@ __S0 1000 0 ABS 0 - -
 __S1 13F 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 _rev 3C 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-_greenArray AA 0 BANK1 1 bssBANK1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_greenArray 120 0 BANK2 1 bssBANK2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _greenS 4D 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lintentry 1006 0 CODE 0 intentry -
-reset_vec 1000 0 CODE 0 reset_vec C:\Users\POCRM9~1\AppData\Local\Temp\xcAs9jk.o
+reset_vec 1000 0 CODE 0 reset_vec C:\Users\POCRM9~1\AppData\Local\Temp\xcAs730.o
 __size_of_neopixel_fill_a 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__pdataBANK0 61 0 BANK0 1 dataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__pdataBANK0 67 0 BANK0 1 dataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
-_ledNum 63 0 BANK0 1 dataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_ledNum 69 0 BANK0 1 dataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -512,19 +517,19 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 1E00 0 CODE 0 maintext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__pmaintext 1DDA 0 CODE 0 maintext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
-_UBMP4_config 1D58 0 CODE 0 text3 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_UBMP4_config 1D32 0 CODE 0 text3 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _ticks_left 3A 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lcommon 0 0 ABS 0 common -
 _LATCbits 10E 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-main@i_203 67 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+main@i_212 65 0 BANK0 1 cstackBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _redArray C9 0 BANK1 1 bssBANK1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-_ADC_config 1D06 0 CODE 0 text7 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_ADC_config 1CE0 0 CODE 0 text7 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 1008 0 CODE 0 end_init -
 __size_of_UBMP4_config 0 0 ABS 0 - dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
@@ -534,29 +539,29 @@ end_of_initialization 1FFA 0 CODE 0 cinit dist/free/production\UBMP4-Intro-1-Inp
 __Hintentry 1006 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 1006 0 CODE 0 reset_vec -
-_OSC_config 1CEE 0 CODE 0 text4 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_OSC_config 1CC8 0 CODE 0 text4 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK2 0 0 ABS 0 bssBANK2 -
 neopixel_fill_a@red 73 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext1 1D98 0 CODE 0 text1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext2 1D22 0 CODE 0 text2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext3 1D58 0 CODE 0 text3 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext4 1CEE 0 CODE 0 text4 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext5 1CDA 0 CODE 0 text5 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext6 1CCA 0 CODE 0 text6 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__ptext7 1D06 0 CODE 0 text7 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_UBMP4_config 1D98 0 CODE 0 text3 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext1 1D72 0 CODE 0 text1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext2 1CFC 0 CODE 0 text2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext3 1D32 0 CODE 0 text3 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext4 1CC8 0 CODE 0 text4 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext5 1CB4 0 CODE 0 text5 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext6 1CA4 0 CODE 0 text6 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__ptext7 1CE0 0 CODE 0 text7 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__end_of_UBMP4_config 1D72 0 CODE 0 text3 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 1000 0 CODE 0 reset_vec -
 __end_of__initialization 1FFA 0 CODE 0 cinit dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_ADC_config 1D22 0 CODE 0 text7 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__end_of_ADC_config 1CFC 0 CODE 0 text7 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 1CB6 0 CODE 0 idataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__pidataBANK0 1C90 0 CODE 0 idataBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_OSC_config 1D06 0 CODE 0 text4 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__end_of_OSC_config 1CE0 0 CODE 0 text4 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __Hend_init 100C 0 CODE 0 end_init -
 __end_of_main 1FAA 0 CODE 0 maintext dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 neopixel_fill_a@green 74 0 COMMON 1 cstackCOMMON dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
@@ -568,8 +573,8 @@ __Lram 0 0 ABS 0 ram -
 _blueS 43 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 _sound 36 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
-_neopixel_send 1D22 0 CODE 0 text2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
-__end_of_ADC_select_channel 1CEE 0 CODE 0 text5 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+_neopixel_send 1CFC 0 CODE 0 text2 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
+__end_of_ADC_select_channel 1CC8 0 CODE 0 text5 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __initialization 1FAA 0 CODE 0 cinit dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/free/production\UBMP4-Intro-1-Input-Output.X.production.o
@@ -600,21 +605,21 @@ __pbssBANK2 120 0 BANK2 1 bssBANK2 dist/free/production\UBMP4-Intro-1-Input-Outp
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 FD5 1FAA 2B 2
-text1 0 ECC 1D98 34 2
-text2 0 E91 1D22 1B 2
-text3 0 EAC 1D58 20 2
-text4 0 E77 1CEE C 2
-text5 0 E6D 1CDA A 2
-text6 0 E65 1CCA 8 2
-text7 0 E83 1D06 E 2
-maintext 0 F00 1E00 D5 2
+text1 0 EB9 1D72 34 2
+text2 0 E7E 1CFC 1B 2
+text3 0 E99 1D32 20 2
+text4 0 E64 1CC8 C 2
+text5 0 E5A 1CB4 A 2
+text6 0 E52 1CA4 8 2
+text7 0 E70 1CE0 E 2
+maintext 0 EED 1DDA E8 2
 cstackCOMMON 1 70 70 E 1
 reset_vec 0 800 1000 6 2
-bssBANK0 1 20 20 49 1
+bssBANK0 1 20 20 4B 1
 bssBANK1 1 A0 A0 48 1
 bssBANK2 1 120 120 1F 1
-idataBANK0 0 E5B 1CB6 4 2
-clrtext 0 E5F 1CBE 6 2
+idataBANK0 0 E48 1C90 4 2
+clrtext 0 E4C 1C98 6 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
