@@ -169,7 +169,7 @@ int main(void)
 /* ================================================================
    IMPORTANT: NEO PIXELS RECEIVE SIGNAL FOR .5 MICRO SECONDS AND 
    NO SIGNAL FOR 1.5 MICRO SECONDS. TAKES 2 MICRO SECONDS PER CYCLE
- remember 325 hZ
+   remember 325 hZ
    ================================================================*/
         sound = ADC_read(); 
         if (sound > 128) {
